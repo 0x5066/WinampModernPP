@@ -206,27 +206,27 @@
 <groupdef id="wasabi.mainframe.nostatusbar" sysregion="1" xuitag="Wasabi:MainFrame:NoStatus">
   <group id="wasabi.main.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
   <group id="wasabi.menubar" x="0" y="18" w="0" relatw="1" sysregion="1" visible="1"/>
-  <script id="standardframe.script" file="../Winamp Modern/scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
 </groupdef>
 
 <!-- <Wasabi:PlaylistFrame:NoStatus /> implementation -->
 <groupdef id="wasabi.playlistframe.nostatusbar" sysregion="1" xuitag="Wasabi:PlaylistFrame:NoStatus">
   <group id="wasabi.standard.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
   <group id="wasabi.menubar.pl" x="0" y="18" w="0" relatw="1" sysregion="1" visible="1"/>
-  <script id="standardframe.script" file="../Winamp Modern/scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
 </groupdef>
 
 <!-- <Wasabi:MediaLibraryFrame:NoStatus /> implementation -->
 <groupdef id="wasabi.medialibraryframe.nostatusbar" sysregion="1" xuitag="Wasabi:MediaLibraryFrame:NoStatus">
   <group id="wasabi.standard.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
   <group id="wasabi.menubar.ml" x="0" y="18" w="0" relatw="1" sysregion="1" visible="1"/>
-  <script id="standardframe.script" file="../Winamp Modern/scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
 </groupdef>
 
 <!-- <Wasabi:VISFrame:NoStatus /> implementation -->
 <groupdef id="wasabi.visframe.nostatusbar" sysregion="1" xuitag="Wasabi:VISFrame:NoStatus">
   <group id="wasabi.standard.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
-  <script id="standardframe.script" file="../Winamp Modern/scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
 </groupdef>
 
 
@@ -434,7 +434,7 @@
    />
 
   <LayoutStatus id="standardframe.layoutstatus" x="11" y="-21" relaty="1" w="-43" relatw="1" h="18" exclude="{system}" />
-  <script id="standardframe.script" file="../Winamp Modern/scripts/standardframe.maki" param="6,23,-12,-48,0,0,1,1" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="6,23,-12,-48,0,0,1,1" />
 
 </groupdef>
 
@@ -485,7 +485,7 @@
     image="player.main.right.region"
     sysregion="-2"
   />
-  <script id="standardframe.script" file="../Winamp Modern/scripts/standardframe.maki" param="6,23,-12,-33,0,0,1,1" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="6,23,-12,-33,0,0,1,1" />
 
 </groupdef>
 

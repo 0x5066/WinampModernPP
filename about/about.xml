@@ -1,9 +1,9 @@
 <elements>
-  <bitmap id="about.bg" file="../Winamp Modern/about/about_bg.png"/>
-  <bitmap id="about.fg" file="../Winamp Modern/about/about_fg.png"/>
-  <bitmap id="about.winampbolt" file="../Winamp Modern/about/about_bolt.png"/>
-  <bitmap id="about.starani" file="../Winamp Modern/about/about_star.png"/>
-  <bitmap id="about.eye" file="../Winamp Modern/about/eye.png"/>
+  <bitmap id="about.bg" file="about/about_bg.png"/>
+  <bitmap id="about.fg" file="about/about_fg.png"/>
+  <bitmap id="about.winampbolt" file="about/about_bolt.png"/>
+  <bitmap id="about.starani" file="about/about_star.png"/>
+  <bitmap id="about.eye" file="about/eye.png"/>
 
   <color id="font.about.color1" value="255,225,155" gammagroup=""/>
   <color id="font.about.color2" value="255,255,255" gammagroup=""/>
@@ -133,6 +133,6 @@
 
  <guiobject fitparent="1" />
 
- <script file="../Winamp Modern/about/about.maki"/>
+ <script file="about/about.maki"/>
 
 </groupdef>

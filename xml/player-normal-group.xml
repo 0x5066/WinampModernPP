@@ -203,7 +203,7 @@
     rectrgn="1"
   />
 
-  <script id="songinfo.script" file="../Winamp Modern/scripts/songinfo.maki" />
+  <script id="songinfo.script" file="scripts/songinfo.maki" />
 </groupdef>
 
 <groupdef id="player.normal.display.beatvisualization" name="BeatVisualization">
@@ -392,7 +392,7 @@
 
   <layer id="main.vis.trigger" x="-93" y="13" w="72" h="25" relatx="1" rectrgn="1"/>
 
-  <script file="../Winamp Modern/scripts/visualizer.maki" />
+  <script file="scripts/visualizer.maki" />
 
 
   <layer
@@ -485,7 +485,7 @@
     alpha="13"
   />
 
-  <script id="beatvisualization.script" file="../Winamp Modern/scripts/beatvisualization.maki" />
+  <script id="beatvisualization.script" file="scripts/beatvisualization.maki" />
 
 </groupdef>
 
@@ -561,7 +561,7 @@
     rectrgn="1"
   />
 
-  <script id="mute.script" file="../Winamp Modern/scripts/mute.maki" />
+  <script id="mute.script" file="scripts/mute.maki" />
 
 </groupdef>
 
@@ -1198,8 +1198,8 @@
      resize="right"
    />
 
-  <script id="seek.script" file="../Winamp Modern/scripts/seek.maki" />
-  <script id="display.script" file="../Winamp Modern/scripts/display.maki" />
+  <script id="seek.script" file="scripts/seek.maki" />
+  <script id="display.script" file="scripts/display.maki" />
 
 
 </groupdef>
@@ -1243,14 +1243,14 @@
     image="player.openclose.overlay"
   />
 
-  <script id="configtabs.script" file="../Winamp Modern/scripts/configtabs.maki" />
-  <script id="videoavs.script" file="../Winamp Modern/scripts/videoavs.maki" />
+  <script id="configtabs.script" file="scripts/configtabs.maki" />
+  <script id="videoavs.script" file="scripts/videoavs.maki" />
 
 </groupdef>
 
 <groupdef id="player.content.group" name="Winamp">
   <group id="player.content.dummy.group" x="0" y="0"/>
-  <script id="mainmenu.script" file="../Winamp Modern/scripts/mainmenu.maki" />
+  <script id="mainmenu.script" file="scripts/mainmenu.maki" />
 </groupdef>
 
 <include file="configdrawer.xml" />

@@ -90,7 +90,7 @@
 
 <groupdef id="mledit.content.group" name="MediaLibraryContent">
   <group id="player.content.ml.dummy.group" x="0" y="17" sysregion="1"/>
-  <script id="mlmenu.script" file="../Winamp Modern/scripts/mlmenu.maki" />
+  <script id="mlmenu.script" file="scripts/mlmenu.maki" />
 </groupdef>
 
 

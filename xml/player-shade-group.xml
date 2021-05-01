@@ -361,7 +361,7 @@
 
   <layer id="main.vis.trigger" x="4" y="4" w="53" h="13" rectrgn="1"/>
 
-  <script file="../Winamp Modern/scripts/visualizer.maki" />
+  <script file="scripts/visualizer.maki" />
 
   <layer
     x="0" y="4"
@@ -381,7 +381,7 @@
 	tooltip="More information about this artist"
   />
 
-  <script file="../Winamp Modern/scripts/shadelinks.maki"/>
+  <script file="scripts/shadelinks.maki"/>
 
   <text
     id="timer"
@@ -665,6 +665,6 @@
   <group id="shadeX3" x="-174" y="1" relatx="1" visible="0"/>
   <group id="shadeX4" x="-130" y="0" relatx="1" visible="0"/>
 
-  <script id="seekshade.script" file="../Winamp Modern/scripts/seekshade.maki" />
+  <script id="seekshade.script" file="scripts/seekshade.maki" />
 
 </groupdef>

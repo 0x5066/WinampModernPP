@@ -425,8 +425,8 @@
       downthumb="player.main.eq.button.pressed"
   />
 
-  <script id="eq.script" file="../Winamp Modern/scripts/eq.maki" />
-  <script id="crossfade.script" file="../Winamp Modern/scripts/crossfade.maki" />
+  <script id="eq.script" file="scripts/eq.maki" />
+  <script id="crossfade.script" file="scripts/crossfade.maki" />
 </groupdef>
 
 
@@ -481,7 +481,7 @@
     tooltip="Scroll down"
     rectrgn="1"
   />
-  <script id="configtarget.script" file="../Winamp Modern/scripts/configtarget.maki" />
+  <script id="configtarget.script" file="scripts/configtarget.maki" />
 </groupdef>
 
 
@@ -943,7 +943,7 @@
     rectrgn="1"
   />
 
-  <script id="notifications_fade_times.script" file="../Winamp Modern/scripts/notifications_fade_times.maki" />
+  <script id="notifications_fade_times.script" file="scripts/notifications_fade_times.maki" />
 
 </groupdef>
 

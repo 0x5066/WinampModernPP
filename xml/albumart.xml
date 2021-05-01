@@ -6,7 +6,7 @@
 		id="waaa" fitparent="1" move="1"
 	/>
 
-	<script file="../Winamp Modern/scripts/albumart.maki" param="waaa" />
+	<script file="scripts/albumart.maki" param="waaa" />
 
 </groupdef>
 
