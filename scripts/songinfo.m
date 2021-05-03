@@ -55,7 +55,7 @@ System.onPlay(){
 	String sit = getSongInfoText();
 	waaaRetries = 0;
 	if (sit != "") getSonginfo(sit);
-	else songInfoTimer.setDelay(16); // goes to 1000 once info is available
+	else songInfoTimer.setDelay(16); // goes to 16ms once info is available
 	songInfoTimer.start();
 }
 
@@ -153,9 +153,13 @@ String tokenizeSongInfo(String tkn, String sinfo){
 
 getSonginfo(String SongInfoString) {
 	String tkn;
+	int bitraate = System.Stringtointeger(System.getPlayItemMetaDataString("bitrate"));
 
 	tkn = tokenizeSongInfo("Bitrate", SongInfoString);
 	if(tkn != "") {bitrateText.setText("["+tkn+"]");}
+	if(bitraate > 100) {bitrateText.setText("["+tkn+"]");}
+	else if(bitraate < 10) {bitrateText.setText("[ "+tkn+"]");}
+	else{bitrateText.setText("[  "+tkn+"]");}
 
 	tkn = tokenizeSongInfo("Channels", SongInfoString);
 	channelDisplay.setXmlParam("image", "player.songinfo." + tkn);
