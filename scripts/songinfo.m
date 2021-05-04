@@ -157,9 +157,9 @@ getSonginfo(String SongInfoString) {
 	tkn = tokenizeSongInfo("Bitrate", SongInfoString);
 	int bitrateint = System.Stringtointeger(tkn);
 	String bitratestring = System.IntegerToString(bitrateint);
-	if(tkn != "") {bitrateText.setText("["+bitratestring+"]");}
-	if(bitrateint < 100) {bitrateText.setText("[ "+bitratestring+"]");}
-	if(bitrateint < 10) {bitrateText.setText("[  "+bitratestring+"]");}
+	if(tkn != "") {bitrateText.setText("["+tkn+"]");}
+	if(bitrateint < 100) {bitrateText.setText("[ "+tkn+"]");}
+	if(bitrateint < 10) {bitrateText.setText("[  "+tkn+"]");}
 
 	tkn = tokenizeSongInfo("Channels", SongInfoString);
 	channelDisplay.setXmlParam("image", "player.songinfo." + tkn);
