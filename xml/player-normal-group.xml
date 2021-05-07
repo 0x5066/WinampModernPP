@@ -1021,9 +1021,7 @@
     w="-108" h="4" relatw="1"
     orientation="right"
     x="9" y="79"
-    left="player.progressbar.left"
     middle="player.progressbar.center"
-    right="player.progressbar.right"
   />
 
   <slider
