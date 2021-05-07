@@ -1018,9 +1018,9 @@
   />
 
   <ProgressGrid
-    w="-108" h="4" relatw="1"
+    w="-109" h="4" relatw="1"
     orientation="right"
-    x="9" y="79"
+    x="10" y="79"
     middle="player.progressbar.center"
   />
 
