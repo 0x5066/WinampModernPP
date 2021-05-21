@@ -193,15 +193,27 @@
   <group id="pl.frame.layout" x="0" y="1"/>
   <component
     x="6"
-    y="6"
+    y="66"
     w="-12"
     relatw="1"
-    h="-65"
+    h="-125"
     relath="1"
     noshowcmdbar="1"
     autoopen="1"
     autoclose="0"
     param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
+  />
+
+    <component
+    x="6"
+    y="6"
+    w="-12"
+    relatw="1"
+    h="60"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="0"
+    param="guid:{E124F4D6-AA3E-4f3d-A813-C2A8CD6501E5}"
   />
 </groupdef>
 
