@@ -916,6 +916,28 @@
 
 
 <groupdef id="player.main" relatw="1" w="0" h="126">
+   <layer
+     id="window.left"
+     x="0" y="0"
+     image="player.main.left"
+     sysregion = "1"
+   />
+   <layer
+     id="window.center"
+     x="180" y="0"
+     w="-270"
+     relatw="1"
+     image="player.main.center"
+     sysregion = "1"
+   />
+   <layer
+     id="window.right"
+     x="-90" y="0"
+     relatx="1"
+     image="player.main.right"
+     sysregion = "1"
+   />
+
 
    <layer
      id="window.bg2.left"
@@ -940,29 +962,6 @@
      image="player.main.bg2.right"
      sysregion = "1"
    />
-
-   <layer
-     id="window.left"
-     x="0" y="0"
-     image="player.main.left"
-     sysregion = "1"
-   />
-   <layer
-     id="window.center"
-     x="180" y="0"
-     w="-270"
-     relatw="1"
-     image="player.main.center"
-     sysregion = "1"
-   />
-   <layer
-     id="window.right"
-     x="-90" y="0"
-     relatx="1"
-     image="player.main.right"
-     sysregion = "1"
-   />
-
    <layer
      x="-72" y="107"
      relatx="1"
