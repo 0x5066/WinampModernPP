@@ -165,5 +165,9 @@ getSonginfo(String SongInfoString) {
 	channelDisplay.setXmlParam("image", "player.songinfo." + tkn);
 
 	tkn = tokenizeSongInfo("Frequency", SongInfoString);
+	int freqint = System.Stringtointeger(tkn);
+	String freqstring = System.IntegerToString(freqint);
 	if(tkn != "") {frequencyText.setText("["+tkn+"]");}
+	if(freqint < 100) {frequencyText.setText("["+tkn+"]");}
+	if(freqint < 10) {frequencyText.setText("[ "+tkn+"]");}
 }
