@@ -133,9 +133,9 @@ trigger.onRightButtonUp (int x, int y)
 	specmenu.addCommand("Thin Bands", 2, currentMode == 2, 0);
 	visMenu.addSubMenu(specmenu, "Spectrum Analyzer");
 
-	oscmenu.addCommand("Solid", 3, currentMode == 3, 0);
+	oscmenu.addCommand("Lines", 3, currentMode == 3, 0);
 	oscmenu.addCommand("Dots", 4, currentMode == 4, 0);
-	oscmenu.addCommand("Lines", 5, currentMode == 5, 0);
+	oscmenu.addCommand("Solid", 5, currentMode == 5, 0);
 	visMenu.addSubMenu(oscmenu, "Oscilloscope");
 
 	visMenu.addSeparator();
