@@ -21,13 +21,13 @@ System.onScriptLoaded(){
 	channelDisplay = frameGroup.findObject("channels");
 
 	songInfoTimer = new Timer;
-	songInfoTimer.setDelay(16);
+	songInfoTimer.setDelay(250);
 
 	if (getStatus() == STATUS_PLAYING) {
 		String sit = getSongInfoText();
 		waaaRetries = 0;
 		if (sit != "") getSonginfo(sit);
-		else songInfoTimer.setDelay(16); // goes to 16ms once info is available
+		else songInfoTimer.setDelay(250); // goes to 250ms once info is available
 		songInfoTimer.start();
 	} else if (getStatus() == STATUS_PAUSED) {
 		getSonginfo(getSongInfoText());
@@ -55,7 +55,7 @@ System.onPlay(){
 	String sit = getSongInfoText();
 	waaaRetries = 0;
 	if (sit != "") getSonginfo(sit);
-	else songInfoTimer.setDelay(16); // goes to 16ms once info is available
+	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
 	songInfoTimer.start();
 }
 
@@ -70,7 +70,7 @@ System.onStop(){
 System.onResume(){
 	String sit = getSongInfoText();
 	if (sit != "") getSonginfo(sit);
-	else songInfoTimer.setDelay(16); // goes to 1000 once info is available
+	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
 	songInfoTimer.start();
 }
 
@@ -81,7 +81,7 @@ System.onPause(){
 songInfoTimer.onTimer(){
 	String sit = getSongInfoText();
 	if (sit == "") return;
-	songInfoTimer.setDelay(16);
+	songInfoTimer.setDelay(250);
 	getSonginfo(sit);
 
 	if(!waaa) loadPlaylistArtWork();
