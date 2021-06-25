@@ -1,5 +1,4 @@
 #include "..\..\..\lib/std.mi"
-#include "..\..\..\lib/application.mi" //needed for the version detection, can be safely removed
 #include "attribs.m"
 
 Global Group frameGroup;
@@ -29,14 +28,6 @@ System.onScriptLoaded() {
 
 	Balance = frameGroup.findObject("Balance");
 	setSongtickerScrolling();
-
-	if(Application.GetVersionNumberString() == "5.8"){ //detects the version, if 5.8 then open getwacup.com and disable repeat and shuffle buttons
-    System.navigateUrlBrowser("https://getwacup.com/");
-	RepeatBtn.setXmlParam("ghost", "1");
-	ShuffleBtn.setXmlParam("ghost", "1");
-	RepeatBtn2.setXmlParam("ghost", "1");
-	ShuffleBtn2.setXmlParam("ghost", "1");
-	}
 }
 
 normal.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)

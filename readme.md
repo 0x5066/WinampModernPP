@@ -6,10 +6,12 @@ There are no plans yet to make further modifications to the skin, as the current
 
 ![Screenshot](https://raw.githubusercontent.com/0x5066/WinampModernForked/main/screenshot.png)
 
-This makes use of version detection, where it'll run a version check on skin load and disable a few features and changes the titles of most skinned windows, if Winamp 5.8 was detected.
+This makes use of version detection (only on the master branch), where it'll run a version check on skin load and disable a few features and changes the titles of most skinned windows, if Winamp 5.8 was detected.
 The checks reside in:
 ``display.m @ line 33``
+
 ``titlebar.m @ line 34``
+
 ``visualizer.m @ line 58``
 
 These can be safely removed and won't cause other hidden issues.

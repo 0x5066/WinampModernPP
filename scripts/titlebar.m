@@ -1,5 +1,4 @@
 #include "..\..\..\lib/std.mi"
-#include "..\..\..\lib/application.mi"
 
 #define MARGIN 0
 
@@ -30,12 +29,6 @@ System.onScriptLoaded() {
     lcenter = center.findObject("window.titlebar.title.overlay");
   }
   right = sg.findObject(getToken(getParam(), ";", 2));
-
-  if(Application.GetVersionNumberString() == "5.8"){ //changes the text of most windows to the one below
-    tcenter.setXmlParam("text", "Please use WACUP.");
-    tcenter.setXmlParam("default", "Please use WACUP.");
-    tcenter.setXmlParam("font", "ariali");
-  }
 }
 
 // backward compatibility with prerelease notify trick

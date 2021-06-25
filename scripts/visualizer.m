@@ -15,7 +15,6 @@ Note:		This script handles also the timer reflection
 ---------------------------------------------------*/
 
 #include "..\..\..\lib/std.mi"
-#include "..\..\..\lib/application.mi"
 
 Function refreshVisSettings();
 Function setVis (int mode);
@@ -54,10 +53,6 @@ System.onScriptLoaded()
 	visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
 
 	refreshVisSettings ();
-
-	if(Application.GetVersionNumberString() == "5.8"){ //slows down the visualizer to 5fps
-    visualizer.setXmlParam("fps", "5");
-  }
 }
 
 refreshVisSettings ()
