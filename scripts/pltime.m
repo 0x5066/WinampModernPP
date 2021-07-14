@@ -35,7 +35,7 @@ frameGroup.onResize(int x, int y, int w, int h) {
 		TimeBG.show();
 		TimeDisplay.show();
 		PLTime.setXMLParam("x","-220");
-		PLTime.setXMLParam("w","90");
+		PLTime.setXMLParam("w","95");
 	} else {
 		TimeBG.hide();
 		TimeDisplay.hide();
