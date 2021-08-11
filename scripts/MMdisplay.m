@@ -5,6 +5,11 @@
 //skin.xml, taken from Ariszló's updated oldtimer.maki script
 //Updated to include a simple menu - 22.03.2021
 
+//If you include this, make sure your text object
+//has "display="time"" (and for TTF "forcefixed="1"")
+//or else you won't get the fancy formatting the
+//engine applies for song timers
+
 #include "..\..\..\lib/std.mi"
 
 Global String currentpos, strremainder, currentpos_rev;
