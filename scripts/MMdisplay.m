@@ -88,6 +88,8 @@ TimeElapsedOrRemaining()
     setTimer(timermode);
 
     if(timermode == 1){ //Time elapsed
+    DisplayTime.setXmlParam("tooltip", "Time Elapsed (click to toggle remaining)");
+    DisplayTimeShade.setXmlParam("tooltip", "Time Elapsed (click to toggle remaining)");
         if(songlength <= 0){ //If below 0, then run StaticTime()
             StaticTime();
         }
@@ -97,6 +99,8 @@ TimeElapsedOrRemaining()
     }
 
     if (timermode == 2){ //Time remaining
+    DisplayTime.setXmlParam("tooltip", "Time Remaining (click to toggle elapsed)");
+    DisplayTimeShade.setXmlParam("tooltip", "Time Remaining (click to toggle elapsed)");
         if(songlength <= 0){
             StaticTime();
         }
@@ -125,7 +129,7 @@ PauseBlinkPaused.onTimer(){ //Remainder
     }else{
         timerSongTimer.stop();
         DisplayTime.setXmlParam("text", "...:..");
-        DisplayTimeShade.setXmlParam("text", "-  :  ");
+        DisplayTimeShade.setXmlParam("text", "   :  ");
     }
 }
 
@@ -258,14 +262,12 @@ System.onTitleChange(String info){
 }
 
 //We stop every timer and instead display Winamp Modern's default of "00:00"
-//In this case it's "  :  "
 System.onStop(){
     TimeElapsedOrRemaining();
     stopped();
 }
 
 StaticTime(){ //Needed since the timer has a delay of 50ms and we don't want any odd flashing on loading
-
     playing();
 }
 
@@ -313,6 +315,9 @@ timerSongTimerReverse.onTimer(){
 
 AreWePlaying(){
 //Just some sanity checks to ensure we're in the right modes
+    DisplayTime.setXmlParam("tooltip", "Time Elapsed (click to toggle remaining)");
+    DisplayTimeShade.setXmlParam("tooltip", "Time Elapsed (click to toggle remaining)");
+
     if (getStatus() == -1){ //Paused
         notendlesspaused();
 	}
@@ -332,6 +337,9 @@ InReverse(){
 //between time remaining or elapsed, so we force
 //the elapsed mode to run
 //This has now been actually fixed
+    DisplayTime.setXmlParam("tooltip", "Time Remaining (click to toggle elapsed)");
+    DisplayTimeShade.setXmlParam("tooltip", "Time Remaining (click to toggle elapsed)");
+
     if(songlength <= 0){
         if (getStatus() == -1){ //Paused
             endlesspaused();
