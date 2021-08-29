@@ -139,7 +139,7 @@
     image="player.songinfo.kbps"
   />
   <text
-    id="Bitrate" 
+    id="Bitrate"
     display="" default="(___)"
     x="20" y="0" w="30" h="8"
     font="player.songinfo.font"
@@ -390,10 +390,9 @@
     fps="60"
   />
 
-  <layer id="main.vis.trigger" x="-93" y="13" w="72" h="25" relatx="1" rectrgn="1"/>
+  <layer id="main.vis.trigger" x="-89" y="13" w="72" h="25" relatx="1" rectrgn="1"/>
 
   <script file="scripts/visualizer.maki" />
-
 
   <layer
     id="visualization.overlay"
