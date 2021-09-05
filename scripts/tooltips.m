@@ -1,20 +1,38 @@
-#include "..\..\..\lib/std.mi"
+#include "lib/std.mi"
 
 Global Group tipGroup;
 Global Text tipText;
+Global GuiObject tipBorder, tipBG;
+Global Double layoutscale;
+
+Global Container containerMain;
+Global Layout layoutMainNormal;
 
 System.onScriptLoaded() {
+
+  containerMain = System.getContainer("main");
+	layoutMainNormal = containerMain.getLayout("normal");
+
   tipGroup = getScriptGroup();
   tipText = tipGroup.getObject("tooltip.text");
+  tipBorder = tipGroup.getObject("tooltip.grid");
+  tipBG = tipGroup.getObject("tooltip.grid.frame");
 
-  tipGroup.setXmlParam("h", "17"); //Vic trick: Setting this via XML is ignored, but the script does the job! Yay!
 }
 
 // When text is changed, resize the group accordingly and make sure it's fully visible
 
 tipText.onTextChanged(String newtext) {
+  //poll scale factor
+  layoutscale = layoutMainNormal.getScale();
+  if(layoutscale < 1) layoutscale = 1;
+
+  tipText.setXmlParam("fontsize", IntegerToString(14*layoutscale));
+  tipBorder.setXmlParam("h", IntegerToString(17*layoutscale));
+  tipBG.setXmlParam("h", IntegerToString((17*layoutscale)-2));
+
   int x = getMousePosX();
-  int y = getMousePosY()+21;
+  int y = getMousePosY()+21; //follows behavior from windows
 
   int vpleft = getViewportLeftFromPoint(x, y);
   int vptop = getViewportTopFromPoint(x, y);
@@ -22,7 +40,7 @@ tipText.onTextChanged(String newtext) {
   int vpbottom = vptop+getViewportHeightFromPoint(x, y);
 
   int w = getTextWidth();
-  int h = tipGroup.getHeight();
+  int h = tipGroup.getHeight()*layoutscale;
 
   if (x + w > vpright) x = vpright - w;
   if (x < vpleft) x = vpleft;
