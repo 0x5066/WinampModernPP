@@ -1,8 +1,9 @@
-#include "lib/std.mi"
+#include "..\..\..\lib/std.mi"
 
 Global Group tipGroup;
 Global Text tipText;
-Global GuiObject tipBorder, tipBG;
+Global GuiObject tipBorder;
+Global Layer tipBG;
 Global Double layoutscale;
 
 Global Container containerMain;
