@@ -27,8 +27,12 @@ tipText.onTextChanged(String newtext) {
   //poll scale factor
   layoutscale = layoutMainNormal.getScale();
   if(layoutscale < 1) layoutscale = 1;
+  if(layoutscale > 1) tipText.setXmlParam("antialias", "1");
+  else tipText.setXmlParam("antialias", "0");
 
   tipText.setXmlParam("fontsize", IntegerToString(14*layoutscale));
+  tipText.setXmlParam("x", IntegerToString(1*layoutscale));
+  tipText.setXmlParam("y", IntegerToString(1*layoutscale));
   tipBorder.setXmlParam("h", IntegerToString(17*layoutscale));
   tipBG.setXmlParam("h", IntegerToString((17*layoutscale)-2));
 
@@ -50,5 +54,6 @@ tipText.onTextChanged(String newtext) {
   if (y < vptop) y = vptop + 32; // avoid mouse
   if (y + h > vpbottom) { h = vpbottom-vptop-64; y = 32; }
 
-  tipGroup.resize(x, y, w, h);
+  if(layoutscale > 2) tipGroup.resize(x, y, w+6, h);
+  else tipGroup.resize(x, y, w, h);
 }
