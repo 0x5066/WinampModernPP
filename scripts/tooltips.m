@@ -54,6 +54,6 @@ tipText.onTextChanged(String newtext) {
   if (y < vptop) y = vptop + 32; // avoid mouse
   if (y + h > vpbottom) { h = vpbottom-vptop-64; y = 32; }
 
-  if(layoutscale > 2) tipGroup.resize(x, y, w+6, h);
+  if(layoutscale >= 2) tipGroup.resize(x, y, w+4, h);
   else tipGroup.resize(x, y, w, h);
 }
