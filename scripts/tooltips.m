@@ -37,7 +37,7 @@ tipText.onTextChanged(String newtext) {
   tipBG.setXmlParam("h", IntegerToString((17*layoutscale)-2));
 
   int x = getMousePosX();
-  int y = getMousePosY()+21; //follows behavior from windows
+  int y = getMousePosY()+(21*layoutscale); //follows behavior from windows
 
   int vpleft = getViewportLeftFromPoint(x, y);
   int vptop = getViewportTopFromPoint(x, y);
