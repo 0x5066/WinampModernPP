@@ -35,6 +35,8 @@ tipText.onTextChanged(String newtext) {
   tipText.setXmlParam("y", IntegerToString(1*layoutscale));
   tipBorder.setXmlParam("h", IntegerToString(17*layoutscale));
   tipBG.setXmlParam("h", IntegerToString((17*layoutscale)-2));
+  //tipBorder.setAlpha(0);
+  //tipBG.setAlpha(0);
 
   int w = getTextWidth();
   int h = tipGroup.getHeight()*layoutscale;
@@ -55,10 +57,18 @@ tipText.onTextChanged(String newtext) {
   if (y + h > vpbottom) { h = vpbottom-vptop-64; y = 32; }
 
   if(layoutscale >= 2) tipGroup.resize(x, getMousePosY(), w+4, 0);
-  else tipGroup.resize(x, getMousePosY(), w, 0);
+  else tipGroup.resize(getMousePosX(), y, 0, h);
 
-  tipGroup.setTargetH(h);
-  tipGroup.setTargetY(y);
-  tipGroup.setTargetSpeed(0.3);
+  //tipBorder.setTargetA(255);
+  //tipBorder.gotoTarget();
+  //tipBorder.setTargetSpeed(0.25);
+
+  //tipBG.setTargetA(255);
+  //tipBG.gotoTarget();
+  //tipBG.setTargetSpeed(0.25);
+
+  tipGroup.setTargetW(w);
+  tipGroup.setTargetX(x);
+  tipGroup.setTargetSpeed(0.35);
   tipGroup.gotoTarget();
 }
