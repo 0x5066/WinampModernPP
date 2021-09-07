@@ -36,16 +36,16 @@ tipText.onTextChanged(String newtext) {
   tipBorder.setXmlParam("h", IntegerToString(17*layoutscale));
   tipBG.setXmlParam("h", IntegerToString((17*layoutscale)-2));
 
+  int w = getTextWidth();
+  int h = tipGroup.getHeight()*layoutscale;
+
   int x = getMousePosX();
-  int y = getMousePosY()+(21*layoutscale); //follows behavior from windows
+  int y = getMousePosY() - h; //follows behavior from windows
 
   int vpleft = getViewportLeftFromPoint(x, y);
   int vptop = getViewportTopFromPoint(x, y);
   int vpright = vpleft+getViewportWidthFromPoint(x, y);
   int vpbottom = vptop+getViewportHeightFromPoint(x, y);
-
-  int w = getTextWidth();
-  int h = tipGroup.getHeight()*layoutscale;
 
   if (x + w > vpright) x = vpright - w;
   if (x < vpleft) x = vpleft;
@@ -54,6 +54,11 @@ tipText.onTextChanged(String newtext) {
   if (y < vptop) y = vptop + 32; // avoid mouse
   if (y + h > vpbottom) { h = vpbottom-vptop-64; y = 32; }
 
-  if(layoutscale >= 2) tipGroup.resize(x, y, w+4, h);
-  else tipGroup.resize(x, y, w, h);
+  if(layoutscale >= 2) tipGroup.resize(x, getMousePosY(), w+4, 0);
+  else tipGroup.resize(x, getMousePosY(), w, 0);
+
+  tipGroup.setTargetH(h);
+  tipGroup.setTargetY(y);
+  tipGroup.setTargetSpeed(0.3);
+  tipGroup.gotoTarget();
 }
