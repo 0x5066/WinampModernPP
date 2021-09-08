@@ -176,6 +176,7 @@
     action="EQ_TOGGLE"
     x="93" y="0"
     rectrgn="1"
+    tooltip="Toggle Equalizer"
   />
 
   <!-- shuffle/repeat -->
