@@ -38,7 +38,8 @@ tipText.onTextChanged(String newtext) {
   //tipBorder.setAlpha(0);
   //tipBG.setAlpha(0);
 
-  int w = getTextWidth();
+  if(layoutscale >= 2) int w = getTextWidth()+4;
+  else w = getTextWidth();
   int h = tipGroup.getHeight()*layoutscale;
 
   int x = getMousePosX();
@@ -56,7 +57,7 @@ tipText.onTextChanged(String newtext) {
   if (y < vptop) y = vptop + 32; // avoid mouse
   if (y + h > vpbottom) { h = vpbottom-vptop-64; y = 32; }
 
-  if(layoutscale >= 2) tipGroup.resize(x, getMousePosY(), w+4, 0);
+  if(layoutscale >= 2) tipGroup.resize(getMousePosX(), y, 0, h);
   else tipGroup.resize(getMousePosX(), y, 0, h);
 
   //tipBorder.setTargetA(255);
