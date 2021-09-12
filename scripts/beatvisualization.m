@@ -1,4 +1,4 @@
-#include <lib/std.mi>
+#include "..\..\..\lib/std.mi"
 #include "attribs.m"
 
 Function setObjects();
@@ -9,7 +9,7 @@ Global Timer refreshEQ;
 Global AnimatedLayer beatbarLeft,beatbarRight;
 Global int lastBeatLeft,lastBeatRight;
 Global Button Toggler,Toggler2;
-Global Int dobeat2;
+Global Int dobeat2, level1, level2;
 
 System.onScriptLoaded() {
 	initAttribs();
@@ -77,30 +77,16 @@ frameGroup.onResize(int x, int y, int w, int h) {
 }
 
 refreshEQ.onTimer() {
-  int beatLeft= System.getLeftVuMeter();
-  int beatRight= System.getRightVuMeter();
+//credit to Egor Petrov/E-Trance for the original piece of code used in his EPS3 skin
+//modified to remove the signal being made logarithmic, making it linear
+	float DivL1 = 1.75;
+	float DivR1 = DivL1;
 
-  int frameLeft=beatLeft/16;
-  int frameRight=beatRight/16;
+	level1 += ((getLeftVuMeter()*beatbarleft.getLength()/256)/DivL1 - Level1 / DivL1);
+	level2 += ((getRightVuMeter()*beatbarright.getLength()/256)/DivR1 - level2 / DivR1);
 
-  if (frameLeft>14) frameLeft=14;
-  if (frameRight>14) frameRight=14;
-
-  if (frameLeft<lastBeatLeft) {
-    frameLeft=lastBeatLeft-1;
-    if (frameLeft<0) frameLeft=0;
-  }
-
-  if (frameRight<lastBeatRight) {
-    frameRight=lastBeatRight-1;
-    if (frameRight<0) frameRight=0;
-  }
-
-  lastBeatLeft=frameLeft;
-  lastBeatRight=frameRight;
-
-  beatbarLeft.gotoframe(frameLeft);
-  beatbarRight.gotoframe(frameRight);
+    beatbarleft.gotoFrame(level1);
+    beatbarright.gotoFrame(level2);
 }
 
 beatvisualization_attrib.onDataChanged() {
