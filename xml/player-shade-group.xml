@@ -359,9 +359,53 @@
     fps="60"
   />
 
+  <AnimatedLayer
+    id="player.vu.left"
+    x="3" y="4"
+    w="54" h="5"
+    image="player.visualization.vu"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
+  <AnimatedLayer
+    id="player.vu.right"
+    x="3" y="12"
+    w="54" h="5"
+    image="player.visualization.vu"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
+  <AnimatedLayer
+    id="player.vu.leftpeak"
+    x="3" y="4"
+    w="54" h="5"
+    image="player.visualization.vupeak"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
+  <AnimatedLayer
+    id="player.vu.rightpeak"
+    x="3" y="12"
+    w="54" h="5"
+    image="player.visualization.vupeak"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
   <layer id="main.vis.trigger" x="4" y="4" w="53" h="13" rectrgn="1"/>
 
-  <script file="scripts/visualizer.maki" />
+  <script file="../Winamp Modern/scripts/visualizer.maki" />
 
   <layer
     x="0" y="4"
@@ -381,7 +425,7 @@
 	tooltip="More information about this artist"
   />
 
-  <script file="scripts/shadelinks.maki"/>
+  <script file="../Winamp Modern/scripts/shadelinks.maki"/>
 
   <text
     id="timer"
@@ -665,6 +709,6 @@
   <group id="shadeX3" x="-174" y="1" relatx="1" visible="0"/>
   <group id="shadeX4" x="-130" y="0" relatx="1" visible="0"/>
 
-  <script id="seekshade.script" file="scripts/seekshade.maki" />
+  <script id="seekshade.script" file="../Winamp Modern/scripts/seekshade.maki" />
 
 </groupdef>

@@ -350,8 +350,6 @@
     pauseBitmap="player.status.pause"
   />
 
-
-
   <!-- Visualization -->
   <layer
     id="visualization.background"
@@ -391,6 +389,54 @@
     fps="60"
   />
 
+  <AnimatedLayer
+    id="player.vu.left"
+    x="-89" y="13"
+    relatx="1"
+    w="72" h="11"
+    image="player.visualization.vu"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
+  <AnimatedLayer
+    id="player.vu.right"
+    x="-89" y="27"
+    relatx="1"
+    w="72" h="11"
+    image="player.visualization.vu"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
+  <AnimatedLayer
+    id="player.vu.leftpeak"
+    x="-89" y="13"
+    relatx="1"
+    w="72" h="11"
+    image="player.visualization.vupeak"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
+  <AnimatedLayer
+    id="player.vu.rightpeak"
+    x="-89" y="27"
+    relatx="1"
+    w="72" h="11"
+    image="player.visualization.vupeak"
+    frameheight="1"
+    start="0"
+    end="72"
+    ghost="1"
+  />
+
   <layer id="main.vis.trigger" x="-89" y="13" w="72" h="25" relatx="1" rectrgn="1"/>
 
   <script file="../Winamp Modern/scripts/visualizer.maki" />
@@ -419,7 +465,7 @@
     fontsize="18"
     color="font.display.songticker"
     altfont="Arial"
-   />
+  />
   
   <Text
     id="Infoticker"
@@ -1034,7 +1080,6 @@
     thumb="player.button.seek"
     downThumb="player.button.seek.pressed"
     hoverThumb="player.button.seek.hover"
-    tooltip="Seeker"
   />
   <slider
     id="SeekerGhost"
@@ -1046,6 +1091,7 @@
     thumb="player.button.seek"
     downThumb="player.button.seek.pressed"
     hoverThumb="player.button.seek.hover"
+    tooltip="Seeker"
   />
 
 

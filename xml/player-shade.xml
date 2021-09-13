@@ -17,8 +17,8 @@
   <!--<group id="shadedrawer" x="215" y="0" sysregion="1" move="1"/>-->
   <group id="shademain" x="0" y="0" sysregion="1"/>
 
-  <script id="shadecontrol.script" file="scripts/shadesizepos.maki" />
-  <script id="shadecontrol.script" file="scripts/shadecontrol.maki" />
+  <script id="shadecontrol.script" file="../Winamp Modern/scripts/shadesizepos.maki" />
+  <script id="shadecontrol.script" file="../Winamp Modern/scripts/shadecontrol.maki" />
 
 
 </layout>
