@@ -116,6 +116,7 @@ VU.onTimer() {
 // saving those precious cycles
 System.onStop(){
 	if(currentMode == 6){
+		VU.start(); //prevents VU meter getting stuck on stop
 		VUStopTimer.start();
 	}
 }
