@@ -27,13 +27,14 @@ Global Text tmr;
 Global Timer VU, VUStopTimer;
 
 Global PopUpMenu visMenu;
-Global PopUpMenu specmenu;
-Global PopUpMenu oscmenu;
 Global PopUpMenu pksmenu;
 Global PopUpMenu anamenu;
 Global PopUpMenu vumenu;
+Global PopUpMenu anasettings;
+Global PopUpMenu oscsettings;
+Global PopUpMenu vusettings;
 
-Global Int currentMode, a_falloffspeed, p_falloffspeed, a_coloring, vp_falloffspeed, Level1, Level2;
+Global Int currentMode, a_falloffspeed, p_falloffspeed, vp_falloffspeed, Level1, Level2, osc_render, ana_render;
 Global float peak1, peak2, pgrav1, pgrav2, vu_falloffspeed;
 Global Boolean show_peaks, show_vupeaks, isShade;
 Global layer trigger;
@@ -58,6 +59,8 @@ System.onScriptLoaded()
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
 	visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
+	visualizer.setXmlParam("oscstyle", integerToString(osc_render));
+	visualizer.setXmlParam("bandwidth", integerToString(ana_render));
 
 	LeftMeter = scriptGroup.findObject("player.vu.left");
 	RightMeter = scriptGroup.findObject("player.vu.right");
@@ -68,7 +71,6 @@ System.onScriptLoaded()
 	pgrav1 = 0;
 	pgrav2 = 0;
 
-	// TODO: stop timer when song is paused
 	VU = new Timer;
 	VU.setdelay(16);
 
@@ -82,11 +84,8 @@ VU.onTimer() {
 //credit to Egor Petrov/E-Trance for the original piece of code used in his EPS3 skin
 //modified to remove the signal being made logarithmic, making it linear
 //gravity/peak smoothness and optimizations by mirzi
-	float DivL1 = 1.75;
-	float DivR1 = DivL1;
-
-	level1 += ((getLeftVuMeter()*LeftMeter.getLength()/256)/DivL1 - Level1 / DivL1);
-	level2 += ((getRightVuMeter()*RightMeter.getLength()/256)/DivR1 - level2 / DivR1);
+	level1 = (getLeftVuMeter()*LeftMeter.getLength()/256);
+	level2 = (getRightVuMeter()*RightMeter.getLength()/256);
 
     LeftMeter.gotoFrame(level1);
     RightMeter.gotoFrame(level2);
@@ -155,33 +154,52 @@ refreshVisSettings ()
 	a_falloffspeed = getPrivateInt(getSkinName(), "Visualizer analyzer falloff", 3);
 	p_falloffspeed = getPrivateInt(getSkinName(), "Visualizer peaks falloff", 2);
 	vp_falloffspeed = getPrivateInt(getSkinName(), "Visualizer VU peaks falloff", 2);
-	a_coloring = getPrivateInt(getSkinName(), "Visualizer analyzer coloring", 0);
+	osc_render = getPrivateInt(getSkinName(), "Oscilloscope Settings", 1);
+	ana_render = getPrivateInt(getSkinName(), "Spectrum Analyzer Settings", 1);
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	LeftMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
 	RightMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
 	visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
 	visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
+	visualizer.setXmlParam("oscstyle", integerToString(osc_render));
+	visualizer.setXmlParam("bandwidth", integerToString(ana_render));
 
 	vu_falloffspeed = (vp_falloffspeed/100)+0.02;
 
-	if (a_coloring == 0)
-	{
-		visualizer.setXmlParam("coloring", "Normal");
-	}
-	else if (a_coloring == 1)
-	{
-		visualizer.setXmlParam("coloring", "Normal");
-	}
-	else if (a_coloring == 2)
-	{
-		visualizer.setXmlParam("coloring", "Fire");
-	}
-	else if (a_coloring == 3)
-	{
-		visualizer.setXmlParam("coloring", "Line");
-	}
-	
+	if (osc_render == 0)
+		{
+			visualizer.setXmlParam("oscstyle", "Lines");
+		}
+		else if (osc_render == 2)
+		{
+			visualizer.setXmlParam("oscstyle", "Lines");
+		}
+		else if (osc_render == 1)
+		{
+			visualizer.setXmlParam("oscstyle", "Solid");
+		}
+		else if (osc_render == 3)
+		{
+			visualizer.setXmlParam("oscstyle", "Dots");
+		}
+	setPrivateInt(getSkinName(), "Oscilloscope Settings", osc_render);
+    
+	if (ana_render == 0)
+		{
+			visualizer.setXmlParam("bandwidth", "Thin");
+		}
+		else if (ana_render == 1)
+		{
+			visualizer.setXmlParam("bandwidth", "Thin");
+		}
+		else if (ana_render == 2)
+		{
+			visualizer.setXmlParam("bandwidth", "wide");
+		}
+	setPrivateInt(getSkinName(), "Spectrum Analyzer Settings", ana_render);
+
+    if (currentMode >= 5) currentMode = 1;
 	setVis (currentMode);
 }
 
@@ -202,53 +220,65 @@ trigger.onLeftButtonDown (int x, int y)
 
 	currentMode++;
 
-	if (currentMode == 7)
+	if (currentMode == 4)
 	{
 		currentMode = 0;
 	}
 
-	setVis	(currentMode);
+	setVis (currentMode);
 	complete;
 }
 
 trigger.onRightButtonUp (int x, int y)
 {
 	visMenu = new PopUpMenu;
-	specmenu = new PopUpMenu;
-	oscmenu = new PopUpMenu;
 	pksmenu = new PopUpMenu;
 	anamenu = new PopUpMenu;
+	anasettings = new PopUpMenu;
+	oscsettings = new PopUpMenu;
+	vusettings = new PopUpMenu;
 	vumenu = new PopUpMenu;
 
-	visMenu.addCommand("Presets:", 999, 0, 1);
-	visMenu.addCommand("No Visualization", 100, currentMode == 0, 0);
-	specmenu.addCommand("Thick Bands", 1, currentMode == 1, 0);
-	specmenu.addCommand("Thin Bands", 2, currentMode == 2, 0);
-	visMenu.addSubMenu(specmenu, "Spectrum Analyzer");
-
-	oscmenu.addCommand("Lines", 3, currentMode == 3, 0);
-	oscmenu.addCommand("Dots", 4, currentMode == 4, 0);
-	oscmenu.addCommand("Solid", 5, currentMode == 5, 0);
-	visMenu.addSubMenu(oscmenu, "Oscilloscope");
-	visMenu.addCommand("VU Meter", 6, currentMode == 6, 0);
-	visMenu.addCommand("Show VU Peaks", 102, show_vupeaks == 1, 0);
-
+	visMenu.addCommand("Modes:", 999, 0, 1);
 	visMenu.addSeparator();
-	visMenu.addCommand("Options:", 999, 0, 1);
-	visMenu.addCommand("Show Peaks", 101, show_peaks == 1, 0);
+	visMenu.addCommand("Disabled", 100, currentMode == 0, 0);
+	visMenu.addCommand("Spectrum Analyzer", 1, currentMode == 1, 0);
+	visMenu.addCommand("Oscilloscope", 2, currentMode == 2, 0);
+	visMenu.addCommand("VU Meter", 3, currentMode == 3, 0);
+	
+	visMenu.addSeparator();
+	visMenu.addCommand("Modern Visualizer Settings", 998, 0, 1);
+	visMenu.addSeparator();
+	visMenu.addSubmenu(anasettings, "Spectrum Analyzer Options");
+	anasettings.addCommand("Band line width:", 997, 0, 1);
+	anasettings.addSeparator();
+	anasettings.addCommand("Thin", 701, ana_render == 1, 0);
+	anasettings.addCommand("Thick", 702, ana_render == 2, 0);
+	anasettings.addSeparator();
+	anasettings.addCommand("Show Peaks", 101, show_peaks == 1, 0);
+	anasettings.addSeparator();
 	pksmenu.addCommand("Slower", 200, p_falloffspeed == 0, 0);
 	pksmenu.addCommand("Slow", 201, p_falloffspeed == 1, 0);
 	pksmenu.addCommand("Moderate", 202, p_falloffspeed == 2, 0);
 	pksmenu.addCommand("Fast", 203, p_falloffspeed == 3, 0);
 	pksmenu.addCommand("Faster", 204, p_falloffspeed == 4, 0);
-	visMenu.addSubMenu(pksmenu, "Peak Falloff Speed");
+	anasettings.addSubMenu(pksmenu, "Peak falloff Speed");
 	anamenu.addCommand("Slower", 300, a_falloffspeed == 0, 0);
 	anamenu.addCommand("Slow", 301, a_falloffspeed == 1, 0);
 	anamenu.addCommand("Moderate", 302, a_falloffspeed == 2, 0);
 	anamenu.addCommand("Fast", 303, a_falloffspeed == 3, 0);
 	anamenu.addCommand("Faster", 304, a_falloffspeed == 4, 0);
-	visMenu.addSubMenu(anamenu, "Analyzer Falloff Speed");
-	visMenu.addSubmenu(vumenu, "VU Peak Falloff Speed");
+	anasettings.addSubMenu(anamenu, "Analyzer falloff Speed");
+	visMenu.addSubmenu(oscsettings, "Oscilloscope Options");
+	oscsettings.addCommand("Oscilloscope drawing style:", 996, 0, 1);
+	oscsettings.addSeparator();
+	oscsettings.addCommand("Dots", 603, osc_render == 3, 0);
+	oscsettings.addCommand("Lines", 601, osc_render == 1, 0);
+	oscsettings.addCommand("Solid", 602, osc_render == 2, 0);
+	visMenu.addSubmenu(vusettings, "VU Meter Options");
+	vusettings.addCommand("Show VU Peaks", 102, show_vupeaks == 1, 0);
+	vusettings.addSeparator();
+	vusettings.addSubmenu(vumenu, "Peak falloff Speed");
 	vumenu.addCommand("Slower", 500, vp_falloffspeed == 0, 0);
 	vumenu.addCommand("Slow", 501, vp_falloffspeed == 1, 0);
 	vumenu.addCommand("Moderate", 502, vp_falloffspeed == 2, 0);
@@ -258,10 +288,11 @@ trigger.onRightButtonUp (int x, int y)
 	ProcessMenuResult (visMenu.popAtMouse());
 
 	delete visMenu;
-	delete specmenu;
-	delete oscmenu;
 	delete pksmenu;
 	delete anamenu;
+	delete anasettings;
+	delete oscsettings;
+	delete vusettings;
 	delete vumenu;
 
 	complete;	
@@ -306,33 +337,51 @@ ProcessMenuResult (int a)
 		setPrivateInt(getSkinName(), "Visualizer analyzer falloff", a_falloffspeed);
 	}
 
-	else if (a >= 400 && a <= 403)
-	{
-		a_coloring = a - 400;
-		if (a_coloring == 0)
-		{
-			visualizer.setXmlParam("coloring", "Normal");
-		}
-		else if (a_coloring == 1)
-		{
-			visualizer.setXmlParam("coloring", "Normal");
-		}
-		else if (a_coloring == 2)
-		{
-			visualizer.setXmlParam("coloring", "Fire");
-		}
-		else if (a_coloring == 3)
-		{
-			visualizer.setXmlParam("coloring", "Line");
-		}
-		setPrivateInt(getSkinName(), "Visualizer analyzer coloring", a_coloring);
-	}
-
 	else if (a >= 500 && a <= 504)
 	{
 		vp_falloffspeed = a - 500;
 		vu_falloffspeed = (vp_falloffspeed/100)+0.02;
 		setPrivateInt(getSkinName(), "Visualizer VU peaks falloff", vp_falloffspeed);
+	}
+
+	else if (a >= 600 && a <= 603)
+	{
+		osc_render = a - 600;
+		if (osc_render == 0)
+		{
+			visualizer.setXmlParam("oscstyle", "lines");
+		}
+		else if (osc_render == 2)
+		{
+			visualizer.setXmlParam("oscstyle", "lines");
+		}
+		else if (osc_render == 1)
+		{
+			visualizer.setXmlParam("oscstyle", "solid");
+		}
+		else if (osc_render == 3)
+		{
+			visualizer.setXmlParam("oscstyle", "dots");
+		}
+		setPrivateInt(getSkinName(), "Oscilloscope Settings", osc_render);
+	}
+
+	else if (a >= 700 && a <= 702)
+	{
+		ana_render = a - 700;
+		if (ana_render == 0)
+		{
+			visualizer.setXmlParam("bandwidth", "thin");
+		}
+		else if (ana_render == 1)
+		{
+			visualizer.setXmlParam("bandwidth", "thin");
+		}
+		else if (ana_render == 2)
+		{
+			visualizer.setXmlParam("bandwidth", "wide");
+		}
+		setPrivateInt(getSkinName(), "Spectrum Analyzer Settings", ana_render);
 	}
 }
 
@@ -355,7 +404,6 @@ setVis (int mode)
 		RightMeterPeak.setXmlParam("alpha", "0");
 		LeftMeter.setXmlParam("visible", "0");
 		RightMeter.setXmlParam("visible", "0");
-		visualizer.setXmlParam("bandwidth", "wide");
 		visualizer.setMode(1);
 	}
 	else if (mode == 2)
@@ -365,40 +413,9 @@ setVis (int mode)
 		RightMeterPeak.setXmlParam("alpha", "0");
 		LeftMeter.setXmlParam("visible", "0");
 		RightMeter.setXmlParam("visible", "0");
-		visualizer.setXmlParam("bandwidth", "thin");
-		visualizer.setMode(1);
+		visualizer.setMode(2);
 	}
 	else if (mode == 3)
-	{
-		VU.stop();
-		LeftMeterPeak.setXmlParam("alpha", "0");
-		RightMeterPeak.setXmlParam("alpha", "0");
-		LeftMeter.setXmlParam("visible", "0");
-		RightMeter.setXmlParam("visible", "0");
-		visualizer.setXmlParam("oscstyle", "solid");
-		visualizer.setMode(2);
-	}
-	else if (mode == 4)
-	{
-		VU.stop();
-		LeftMeterPeak.setXmlParam("alpha", "0");
-		RightMeterPeak.setXmlParam("alpha", "0");
-		LeftMeter.setXmlParam("visible", "0");
-		RightMeter.setXmlParam("visible", "0");
-		visualizer.setXmlParam("oscstyle", "dots");
-		visualizer.setMode(2);
-	}
-	else if (mode == 5)
-	{
-		VU.stop();
-		LeftMeterPeak.setXmlParam("alpha", "0");
-		RightMeterPeak.setXmlParam("alpha", "0");
-		LeftMeter.setXmlParam("visible", "0");
-		RightMeter.setXmlParam("visible", "0");
-		visualizer.setXmlParam("oscstyle", "lines");
-		visualizer.setMode(2);
-	}
-	else if (mode == 6)
 	{
 		VU.start();
 		LeftMeter.setXmlParam("visible", "1");
