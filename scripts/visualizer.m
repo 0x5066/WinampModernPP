@@ -19,10 +19,11 @@ Note:		This script handles also the timer reflection
 Function refreshVisSettings();
 Function setVis (int mode);
 Function ProcessMenuResult (int a);
+Function unsmooth();
+Function smooth();
 
 Global Group scriptGroup;
 Global Vis visualizer;
-Global Text tmr;
 
 Global Timer VU, VUStopTimer;
 
@@ -36,7 +37,7 @@ Global PopUpMenu vusettings;
 
 Global Int currentMode, a_falloffspeed, p_falloffspeed, vp_falloffspeed, Level1, Level2, osc_render, ana_render;
 Global float peak1, peak2, pgrav1, pgrav2, vu_falloffspeed;
-Global Boolean show_peaks, show_vupeaks, isShade;
+Global Boolean show_peaks, show_vupeaks, vu_smooth, isShade;
 Global layer trigger;
 
 Global AnimatedLayer LeftMeter, RightMeter, LeftMeterPeak, RightMeterPeak;
@@ -80,38 +81,6 @@ System.onScriptLoaded()
 	refreshVisSettings();
 }
 
-VU.onTimer() {
-//credit to Egor Petrov/E-Trance for the original piece of code used in his EPS3 skin
-//modified to remove the signal being made logarithmic, making it linear
-//gravity/peak smoothness and optimizations by mirzi
-	level1 = (getLeftVuMeter()*LeftMeter.getLength()/256);
-	level2 = (getRightVuMeter()*RightMeter.getLength()/256);
-
-    LeftMeter.gotoFrame(level1);
-    RightMeter.gotoFrame(level2);
-
-	if (level1 >= peak1){
-		peak1 = level1;
-		pgrav1 = 0;
-	}
-	else{
-		peak1 += pgrav1;
-		pgrav1 -= vu_falloffspeed;
-	}
-	if (level2 >= peak2){
-		peak2 = level2;
-		pgrav2 = 0;
-	}
-	else{
-		peak2 += pgrav2;
-		pgrav2 -= vu_falloffspeed;
-	}
-
-	// also add a +1 here if you don't want the peaks and bars touching
-	LeftMeterPeak.gotoFrame(peak1);
-	RightMeterPeak.gotoFrame(peak2);
-}
-
 // saving those precious cycles
 System.onStop(){
 	if(currentMode == 6){
@@ -151,11 +120,12 @@ refreshVisSettings ()
 	currentMode = getPrivateInt(getSkinName(), "Visualizer Mode", 1);
 	show_peaks = getPrivateInt(getSkinName(), "Visualizer show Peaks", 1);
 	show_vupeaks = getPrivateInt(getSkinName(), "Visualizer show VU Peaks", 1);
+	vu_smooth = getPrivateInt(getSkinName(), "Smooth VU Meters", 1);
 	a_falloffspeed = getPrivateInt(getSkinName(), "Visualizer analyzer falloff", 3);
 	p_falloffspeed = getPrivateInt(getSkinName(), "Visualizer peaks falloff", 2);
 	vp_falloffspeed = getPrivateInt(getSkinName(), "Visualizer VU peaks falloff", 2);
 	osc_render = getPrivateInt(getSkinName(), "Oscilloscope Settings", 1);
-	ana_render = getPrivateInt(getSkinName(), "Spectrum Analyzer Settings", 1);
+	ana_render = getPrivateInt(getSkinName(), "Spectrum Analyzer Settings", 2);
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	LeftMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
@@ -277,6 +247,7 @@ trigger.onRightButtonUp (int x, int y)
 	oscsettings.addCommand("Solid", 602, osc_render == 2, 0);
 	visMenu.addSubmenu(vusettings, "VU Meter Options");
 	vusettings.addCommand("Show VU Peaks", 102, show_vupeaks == 1, 0);
+	vusettings.addCommand("VU Smoothing", 103, vu_smooth == 1, 0);
 	vusettings.addSeparator();
 	vusettings.addSubmenu(vumenu, "Peak falloff Speed");
 	vumenu.addCommand("Slower", 500, vp_falloffspeed == 0, 0);
@@ -321,6 +292,12 @@ ProcessMenuResult (int a)
 		LeftMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
 		RightMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
 		setPrivateInt(getSkinName(), "Visualizer show VU Peaks", show_vupeaks);
+	}
+
+	else if (a == 103)
+	{
+		vu_smooth = (vu_smooth - 1) * (-1);
+		setPrivateInt(getSkinName(), "Smooth VU Meters", vu_smooth);
 	}
 
 	else if (a >= 200 && a <= 204)
@@ -383,6 +360,55 @@ ProcessMenuResult (int a)
 		}
 		setPrivateInt(getSkinName(), "Spectrum Analyzer Settings", ana_render);
 	}
+}
+
+VU.onTimer(){
+//credit to Egor Petrov/E-Trance for the original piece of code used in his EPS3 skin
+//modified to remove the signal being made logarithmic, making it linear
+//gravity/peak smoothness and optimizations by mirzi
+
+	if(vu_smooth == 0){
+		unsmooth();
+	}else{
+		smooth();
+	}
+
+    LeftMeter.gotoFrame(level1);
+    RightMeter.gotoFrame(level2);
+
+	if (level1 >= peak1){
+		peak1 = level1;
+		pgrav1 = 0;
+	}
+	else{
+		peak1 += pgrav1;
+		pgrav1 -= vu_falloffspeed;
+	}
+	if (level2 >= peak2){
+		peak2 = level2;
+		pgrav2 = 0;
+	}
+	else{
+		peak2 += pgrav2;
+		pgrav2 -= vu_falloffspeed;
+	}
+
+	// also add a +1 here if you don't want the peaks and bars touching
+	LeftMeterPeak.gotoFrame(peak1);
+	RightMeterPeak.gotoFrame(peak2);
+}
+
+unsmooth(){
+	level1 = (getLeftVuMeter()*LeftMeter.getLength()/256);
+	level2 = (getRightVuMeter()*RightMeter.getLength()/256);
+}
+
+smooth(){
+	float DivL1 = 1.75;
+	float DivR1 = DivL1;
+
+	level1 += ((getLeftVuMeter()*LeftMeter.getLength()/256)/DivL1 - Level1 / DivL1);
+	level2 += ((getRightVuMeter()*RightMeter.getLength()/256)/DivR1 - level2 / DivR1);
 }
 
 setVis (int mode)
