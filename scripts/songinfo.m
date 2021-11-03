@@ -160,16 +160,17 @@ getSonginfo(String SongInfoString) {
 	if(tkn != "") {bitrateText.setText("["+tkn+"]");}
 	if(bitrateint < 100) {bitrateText.setText("[ "+tkn+"]");}
 	if(bitrateint < 10) {bitrateText.setText("[  "+tkn+"]");}
+	if(bitrateint > 1000) {bitrateText.setText("["+strleft(tkn, 2)+"H]");} //what's this? Hhousands?
+	if(bitrateint > 10000) {bitrateText.setText("[ "+strleft(tkn, 1)+"C]");} //Cillions???
 	if(bitrateint == 0) {bitrateText.setText("[ "+"--"+"]");}
 
 	tkn = tokenizeSongInfo("Channels", SongInfoString);
 	channelDisplay.setXmlParam("image", "player.songinfo." + tkn);
-
 	tkn = tokenizeSongInfo("Frequency", SongInfoString);
 	int freqint = System.Stringtointeger(tkn);
 	String freqstring = System.IntegerToString(freqint);
 	if(tkn != "") {frequencyText.setText("["+tkn+"]");}
-	if(freqint < 100) {frequencyText.setText("["+tkn+"]");}
+	if(freqint > 100) {frequencyText.setText("["+strright(tkn, 2)+"]");}
 	if(freqint < 10) {frequencyText.setText("[ "+tkn+"]");}
 	if(freqint == 0) {frequencyText.setText("["+"--"+"]");}
 }
