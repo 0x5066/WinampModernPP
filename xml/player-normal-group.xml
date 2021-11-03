@@ -146,6 +146,7 @@
     fontsize="9"
     color="font.display"
     valign="top"
+    ghost="1"
   />
 
   <!-- Frequency -->
@@ -163,6 +164,7 @@
     fontsize="9"
     color="font.display"
     valign="top"
+    ghost="1"
   />
 
   <!-- mono/stereo -->
