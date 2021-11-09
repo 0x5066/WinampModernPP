@@ -417,8 +417,8 @@ setVis (int mode)
 	if (mode == 0)
 	{
 		VU.stop();
-		LeftMeterPeak.setXmlParam("alpha", "0");
-		RightMeterPeak.setXmlParam("alpha", "0");
+		LeftMeterPeak.setXmlParam("visible", "0");
+		RightMeterPeak.setXmlParam("visible", "0");
 		LeftMeter.setXmlParam("visible", "0");
 		RightMeter.setXmlParam("visible", "0");
 		visualizer.setMode(0);
@@ -426,8 +426,8 @@ setVis (int mode)
 	else if (mode == 1)
 	{
 		VU.stop();
-		LeftMeterPeak.setXmlParam("alpha", "0");
-		RightMeterPeak.setXmlParam("alpha", "0");
+		LeftMeterPeak.setXmlParam("visible", "0");
+		RightMeterPeak.setXmlParam("visible", "0");
 		LeftMeter.setXmlParam("visible", "0");
 		RightMeter.setXmlParam("visible", "0");
 		visualizer.setMode(1);
@@ -435,8 +435,8 @@ setVis (int mode)
 	else if (mode == 2)
 	{
 		VU.stop();
-		LeftMeterPeak.setXmlParam("alpha", "0");
-		RightMeterPeak.setXmlParam("alpha", "0");
+		LeftMeterPeak.setXmlParam("visible", "0");
+		RightMeterPeak.setXmlParam("visible", "0");
 		LeftMeter.setXmlParam("visible", "0");
 		RightMeter.setXmlParam("visible", "0");
 		visualizer.setMode(2);
@@ -446,8 +446,8 @@ setVis (int mode)
 		VU.start();
 		LeftMeter.setXmlParam("visible", "1");
 		RightMeter.setXmlParam("visible", "1");
-		LeftMeterPeak.setXmlParam("alpha", "255");
-		RightMeterPeak.setXmlParam("alpha", "255");
+		LeftMeterPeak.setXmlParam("visible", "1");
+		RightMeterPeak.setXmlParam("visible", "1");
 		visualizer.setMode(0);
 	}
 	currentMode = mode;
