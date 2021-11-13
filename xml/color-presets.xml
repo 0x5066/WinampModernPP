@@ -39,8 +39,6 @@
   <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="ListSelBackground" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Good Ol' Winamp">
@@ -84,8 +82,6 @@
   <gammagroup id="ListBackground" value="-4096,-4096,-4096" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-4096,-4096,1400" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="2400,2400,2400" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-2848,-2848,-2368" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="-4096,3727,-4096" gray="1" boost="1" />
 </gammaset>
 
 <gammaset id="Blues">
@@ -129,8 +125,6 @@
   <gammagroup id="ListBackground" value="-1182,0,2035" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-3182,-2880,-880" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="2010,2739,3819" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-3142,-2689,-1081" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="BubbleGum">
@@ -174,8 +168,6 @@
   <gammagroup id="ListBackground" value="1909,778,2739" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="1457,-930,-905" gray="0" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="2412,-453,-478" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="-2126,-3562,-4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Citrus">
@@ -219,8 +211,6 @@
   <gammagroup id="ListBackground" value="4064,480,-4096" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="3064,480,-4096" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-630,-2126,-4096" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Clover">
@@ -264,8 +254,6 @@
   <gammagroup id="ListBackground" value="-2966,-176,-1433" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-2966,-176,-1433" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-3159,-1520,-2458" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-4096,-4096,-4096" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Copper">
@@ -309,8 +297,6 @@
   <gammagroup id="ListBackground" value="3136,-256,-3328" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-992,-2272,-3776" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="-992,-2272,-3776" gray="2" boost="0" />
-  <gammagroup id="Tooltips Background" value="-998,-2316,-3147" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Dymunds">
@@ -354,8 +340,6 @@
   <gammagroup id="ListBackground" value="251,-202,150" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="251,-202,150" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="-4096,-3519,-2614" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="-262,-784,-1366" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-4096,-4085,-4096" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Grapefruit">
@@ -399,8 +383,6 @@
   <gammagroup id="ListBackground" value="-1860,-2991,-2011" gray="1" boost="1" />
   <gammagroup id="ListSelBackground" value="2060,251,-1483" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-2161,-3242,-2244" gray="1" boost="1" />
-  <gammagroup id="Tooltips Text" value="4096,2968,-499" gray="1" boost="1" />
 </gammaset>
 
 <gammaset id="Grapes">
@@ -444,8 +426,6 @@
   <gammagroup id="ListBackground" value="-4096,-4096,-4096" gray="1" boost="1" />
   <gammagroup id="ListSelBackground" value="-1383,-2438,-428" gray="1" boost="1" />
   <gammagroup id="ListColumnText" value="2990,1658,4096" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-1383,-2438,-428" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-4096,-4096,-4096" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Halloween">
@@ -489,8 +469,6 @@
   <gammagroup id="ListBackground" value="4064,1583,-4096" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="0,-4096,-4096" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="4064,980,-4096" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="2576,-701,-4096" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-3000,-3000,-3000" gray="2" boost="1" />
 </gammaset>
 
 <gammaset id="HaXb0x">
@@ -534,8 +512,6 @@
   <gammagroup id="ListBackground" value="-268,1984,-3040" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-4096,-4096,-4096" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="2500,4096,-2000" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="-268,1984,-3040" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-3000,-3000,-3000" gray="2" boost="1" />
 </gammaset>
 
 <gammaset id="Love Machine">
@@ -579,8 +555,6 @@
   <gammagroup id="ListBackground" value="1984,-3040,-832" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="1984,-3040,-832" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="4096,4096,4096" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-333,-4096,-2138" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="MonoDark">
@@ -624,8 +598,6 @@
   <gammagroup id="ListBackground" value="-4096,-4096,-4096" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-1096,-1096,-1096" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="2222,2222,2222" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="-3000,-3000,-3000" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="NightVision">
@@ -669,8 +641,6 @@
   <gammagroup id="ListBackground" value="-3418,452,980" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-4018,-1452,-880" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="-2966,3769,4096" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="-3000,-3000,-3000" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="-1259,3609,4096" gray="1" boost="1" />
 </gammaset>
 
 <gammaset id="Popcorn">
@@ -714,8 +684,6 @@
   <gammagroup id="ListBackground" value="3995,3191,1859" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-1000,-1500,-2000" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="753,-4096,-4096" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="3241,1757,-380" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-2639,-3720,-4096" gray="1" boost="1" />
 </gammaset>
 
 <gammaset id="Powerpuff!">
@@ -759,8 +727,6 @@
   <gammagroup id="ListBackground" value="-1709,-176,1960" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-1709,-176,1960" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="-2413,-1483,0" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="527,1784,-1558" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="-2802,-618,-3444" gray="1" boost="1" />
 </gammaset>
 
 <gammaset id="Toxic">
@@ -804,8 +770,6 @@
   <gammagroup id="ListBackground" value="-2187,-1961,-4021" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-2187,-1961,-4021" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="-2890,-2011,-2740" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-1182,-855,-1785" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-2187,-1961,-4021" gray="1" boost="0" />
 </gammaset>
 
 <gammaset id="Uranium">
@@ -849,8 +813,6 @@
   <gammagroup id="ListBackground" value="2400,2336,2816" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-2592,-2560,-2624" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="-1920,3872,-4096" gray="2" boost="0" />
-  <gammagroup id="Tooltips Background" value="-640,-96,-608" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="-3087,-3467,-3016" gray="2" boost="1" />
 </gammaset>
 
 <gammaset id="Varsity">
@@ -894,8 +856,6 @@
   <gammagroup id="ListBackground" value="-805,-880,-1332" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-805,-880,-1332" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="678,-3745,-3770" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="-2237,-3870,-3820" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,3205,-1223" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Bloods">
@@ -982,8 +942,6 @@
   <gammagroup id="ListBackground" value="-990,-990,-990" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-990,-990,-990" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-440,-440,-440" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="-4085,-4096,-4096" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Gold Rush">
@@ -1027,8 +985,6 @@
   <gammagroup id="ListBackground" value="-715,-1502,-2726" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-715,-1502,-2726" gray="2" boost="1" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="889,539,-948" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Jeans">
@@ -1072,8 +1028,6 @@
   <gammagroup id="ListBackground" value="-1560,-3339,-2522" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-1094,-482,0" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="1705,2142,2405" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-2289,-4096,-3076" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="3279,3717,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Bitter Lemon">
@@ -1117,8 +1071,6 @@
   <gammagroup id="ListBackground" value="2304,3168,-960" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="976,1384,1647" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="-3328,-2272,-1952" gray="1" boost="0" />
-  <gammagroup id="Tooltips Background" value="-190,830,-1504" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Blue Martini">
@@ -1162,8 +1114,6 @@
   <gammagroup id="ListBackground" value="539,539,889" gray="1" boost="1" />
   <gammagroup id="ListSelBackground" value="-219,-161,218" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="-3392,-3392,-3392" gray="2" boost="0" />
-  <gammagroup id="Tooltips Background" value="801,0,-394" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="City Night">
@@ -1207,8 +1157,6 @@
   <gammagroup id="ListBackground" value="2400,2336,2816" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-2592,-2560,-2624" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="4096,4096,4096" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="0,-190,-1240" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Bullfrog">
@@ -1252,8 +1200,6 @@
   <gammagroup id="ListBackground" value="-1920,-715,-4096" gray="0" boost="0" />
   <gammagroup id="ListSelBackground" value="-256,704,-4064" gray="0" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-773,0,-2172" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Fort Knox">
@@ -1297,8 +1243,6 @@
   <gammagroup id="ListBackground" value="-288,-288,-1792" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-288,-288,-1792" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-3018,-3076,-4096" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="2609,2609,0" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Raspberry Club">
@@ -1342,8 +1286,6 @@
   <gammagroup id="ListBackground" value="3046,976,-2976" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="801,-190,-4096" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="3616,2080,-2560" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="451,-686,-2551" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Emerald City">
@@ -1387,8 +1329,6 @@
   <gammagroup id="ListBackground" value="-4096,800,928" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-2720,480,1088" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-1910,-219,364" gray="1" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Baby Jeans">
@@ -1432,8 +1372,6 @@
   <gammagroup id="ListBackground" value="3136,2240,1472" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="1440,768,160" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="3017,2725,2375" gray="1" boost="1" />
-  <gammagroup id="Tooltips Background" value="0,-336,-715" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Arctica">
@@ -1477,8 +1415,6 @@
   <gammagroup id="ListBackground" value="960,1376,1792" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-1344,-832,-320" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="-2336,-2016,-1728" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-248,-132,160" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Donatello">
@@ -1522,8 +1458,6 @@
   <gammagroup id="ListBackground" value="2720,-544,-3200" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="2912,-928,-4096" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Rain Forest">
@@ -1567,8 +1501,6 @@
   <gammagroup id="ListBackground" value="-4096,-1920,-3712" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-2784,-320,-2592" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,3192,0" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-1065,0,-1152" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Amethyst">
@@ -1612,8 +1544,6 @@
   <gammagroup id="ListBackground" value="453,-2287,879" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-320,-2784,-448" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="3279,976,4096" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-2581,-4096,-2610" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Sunflower">
@@ -1657,8 +1587,6 @@
   <gammagroup id="ListColumnText" value="753,-4096,-4096" gray="1" boost="1" />
   <gammagroup id="Text" value="-2639,-3720,-4096" gray="1" boost="0" />
   <gammagroup id="Text Inverse" value="4095,4095,4095" boost="1"/>
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Blueberry">
@@ -1702,8 +1630,6 @@
   <gammagroup id="ListColumnText" value="-2966,3769,4096" gray="1" boost="1" />
   <gammagroup id="Text" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="Text Inverse" value="0,0,0" boost="0"/>
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Coagulated">
@@ -1747,8 +1673,6 @@
   <gammagroup id="ListBackground" value="-2930,-3193,-3222" gray="1" boost="0" /> 
   <gammagroup id="ListSelBackground" value="-3455,-3834,-4096" gray="1" boost="0" /> 
   <gammagroup id="ListColumnText" value="4096,4096,4096" gray="1" boost="1" /> 
-  <gammagroup id="Tooltips Background" value="-1648,-4096,-4096" gray="1" boost="0" /> 
-  <gammagroup id="Tooltips Text" value="-3601,-4096,-4096" gray="1" boost="1" /> 
 </gammaset>
 
 <gammaset id="Peachy">
@@ -1792,8 +1716,6 @@
   <gammagroup id="ListBackground" value="3926,613,-461" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="4096,-507,-1657" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="4096,-507,-1657" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="1334,-2685,-3084" gray="2" boost="1" />
 </gammaset>
 
 <gammaset id="Bricks Set">
@@ -1837,8 +1759,6 @@
   <gammagroup id="ListBackground" value="751,4096,-2394" gray="0" boost="0" />
   <gammagroup id="ListSelBackground" value="2997,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="ListColumnText" value="4096,4096,4096" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="-3836,-1666,490" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="4096,4096,4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Rosemary">
@@ -1882,8 +1802,6 @@
   <gammagroup id="ListBackground" value="4096,3429,3501" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="1413,0,0" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="819,0,0" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Blueberry And Cream">
@@ -1927,8 +1845,6 @@
   <gammagroup id="ListColumnText" value="-2966,3769,4096" gray="1" boost="1" />
   <gammagroup id="Text" value="-3016,-4096,-3016" gray="0" boost="0" />
   <gammagroup id="Text Inverse" value="4096,4096,4096" gray="0" boost="1" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Qwayke">
@@ -1972,8 +1888,6 @@
   <gammagroup id="ListBackground" value="-2782,-3232,-4078" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-3070,-3358,-3520" gray="1" boost="0" />
   <gammagroup id="ListColumnText" value="927,-4096,-4096" gray="2" boost="1" />
-  <gammagroup id="Tooltips Background" value="-2908,-3484,-4096" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="819,-4096,-4096" gray="0" boost="1" />
 </gammaset>
 
 <gammaset id="Lavender Feeling">
@@ -2017,26 +1931,6 @@
   <gammagroup id="ListBackground" value="-3367,-3052,-3052" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-1402,-4096,-1783" gray="0" boost="0" />
   <gammagroup id="ListColumnText" value="-2066,-2155,-2155" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-2607,-2607,-2607" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="-1614,-1614,-1614" gray="0" boost="0" />
-  <gammagroup id="TextDarkShadow" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ListSelection" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="BG0Textoverlay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongicker" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongickerShade" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Frontcover" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplayLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="VISDisplay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="KnobLED" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ButtonsFront" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="BackgroundLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="FrontcoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="PosLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="CoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="MainLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger icons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ThingerButtons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="M:Robe">
@@ -2080,26 +1974,6 @@
   <gammagroup id="ListBackground" value="-4096,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="ListSelBackground" value="-1472,-4096,-4096" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="2003,-4096,-4096" gray="2" boost="1" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="TextDarkShadow" value="0,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="ListSelection" value="4096,-4096,-4096" gray="2" boost="0" />
-  <gammagroup id="BG0Textoverlay" value="0,-4096,-4096" gray="2" boost="0" />
-  <gammagroup id="DisplaySongicker" value="-4096,-4096,-4096" gray="2" boost="0" />
-  <gammagroup id="DisplaySongickerShade" value="-3063,-3063,-3063" gray="2" boost="0" />
-  <gammagroup id="Frontcover" value="-3063,-3063,-3063" gray="0" boost="0" />
-  <gammagroup id="DisplayLabel" value="0,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="VISDisplay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="KnobLED" value="0,-4096,-4096" gray="2" boost="0" />
-  <gammagroup id="ButtonsFront" value="-3063,-3063,-3063" gray="0" boost="0" />
-  <gammagroup id="BackgroundLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="FrontcoverLabel" value="-3063,-3063,-3063" gray="0" boost="0" />
-  <gammagroup id="PosLabel" value="-3579,-3579,-3579" gray="0" boost="0" />
-  <gammagroup id="CoverLabel" value="-3063,-3063,-3063" gray="0" boost="0" />
-  <gammagroup id="MainLabel" value="-3063,-3063,-3063" gray="0" boost="0" />
-  <gammagroup id="Thinger icons" value="0,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="ThingerButtons" value="0,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="Thinger" value="0,-4096,-4096" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Shrek Green">
@@ -2143,26 +2017,6 @@
   <gammagroup id="ListBackground" value="-2031,0,-2031" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-2031,0,-2031" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="-2031,0,-2031" gray="2" boost="0" />
-  <gammagroup id="Tooltips Background" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="Tooltips Text" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="TextDarkShadow" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="ListSelection" value="-2031,0,-2031" gray="2" boost="0" />
-  <gammagroup id="BG0Textoverlay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongicker" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="DisplaySongickerShade" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Frontcover" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="DisplayLabel" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="VISDisplay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="KnobLED" value="-2031,0,-2031" gray="2" boost="0" />
-  <gammagroup id="ButtonsFront" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="BackgroundLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="FrontcoverLabel" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="PosLabel" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="CoverLabel" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="MainLabel" value="-870,0,-870" gray="2" boost="0" />
-  <gammagroup id="Thinger icons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ThingerButtons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Rubber Duck">
@@ -2206,26 +2060,6 @@
   <gammagroup id="ListBackground" value="514,-444,-4096" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="620,-727,-4096" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="2" boost="0" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="TextDarkShadow" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ListSelection" value="0,0,0" gray="2" boost="0" />
-  <gammagroup id="BG0Textoverlay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongicker" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongickerShade" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Frontcover" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplayLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="VISDisplay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="KnobLED" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ButtonsFront" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="BackgroundLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="FrontcoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="PosLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="CoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="MainLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger icons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ThingerButtons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Brown Zune">
@@ -2269,26 +2103,6 @@
   <gammagroup id="ListBackground" value="-4096,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="ListSelBackground" value="-2111,-2111,-2111" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="2" boost="0" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="TextDarkShadow" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ListSelection" value="0,0,0" gray="2" boost="0" />
-  <gammagroup id="BG0Textoverlay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongicker" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongickerShade" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Frontcover" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplayLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="VISDisplay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="KnobLED" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ButtonsFront" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="BackgroundLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="FrontcoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="PosLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="CoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="MainLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger icons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ThingerButtons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="My PKCELL!">
@@ -2332,26 +2146,6 @@
   <gammagroup id="ListBackground" value="-4096,0,-1614" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-4096,0,-1614" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="TextDarkShadow" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ListSelection" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="BG0Textoverlay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongicker" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongickerShade" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Frontcover" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplayLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="VISDisplay" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="KnobLED" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ButtonsFront" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="BackgroundLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="FrontcoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="PosLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="CoverLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="MainLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger icons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ThingerButtons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Thinger" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Discup">
@@ -2395,6 +2189,4 @@
   <gammagroup id="ListBackground" value="-2721,-2289,-790" gray="2" boost="0" />
   <gammagroup id="ListSelBackground" value="-1756,-2882,-4096" gray="1" boost="1" />
   <gammagroup id="ListColumnText" value="-2551,-2592,-2592" gray="0" boost="0" />
-  <gammagroup id="Tooltips Background" value="-2829,-2731,-1958" gray="0" boost="0" />
-  <gammagroup id="Tooltips Text" value="-312,-2114,-3695" gray="1" boost="1" />
 </gammaset>
