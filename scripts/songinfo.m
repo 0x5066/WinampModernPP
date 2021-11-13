@@ -59,6 +59,14 @@ System.onPlay(){
 	songInfoTimer.start();
 }
 
+System.onTitleChange(String newtitle){
+	String sit = getSongInfoText();
+	waaaRetries = 0;
+	if (sit != "") getSonginfo(sit);
+	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	songInfoTimer.start();
+}
+
 System.onStop(){
 	waaaRetries = 0;
 	songInfoTimer.stop();
