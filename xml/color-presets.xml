@@ -1962,7 +1962,7 @@
   <gammagroup id="DisplayVis" value="0,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="DisplayBeatVis" value="0,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="DisplaySongticker" value="0,-4096,-4096" gray="2" boost="0" />
-  <gammagroup id="DisplaySongtickerShade" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="DisplaySongtickerShade" value="0,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="ProgressBar" value="0,-4096,-4096" gray="2" boost="0" />
   <gammagroup id="BGOverlayDark" value="0,-4096,-4096" gray="0" boost="1" />
   <gammagroup id="BGOverlayBright" value="0,-4096,-4096" gray="0" boost="0" />
@@ -2005,7 +2005,7 @@
   <gammagroup id="DisplayVis" value="0,0,0" gray="2" boost="0" />
   <gammagroup id="DisplayBeatVis" value="0,0,0" gray="2" boost="0" />
   <gammagroup id="DisplaySongticker" value="0,0,0" gray="2" boost="0" />
-  <gammagroup id="DisplaySongtickerShade" value="-2031,0,-2031" gray="2" boost="0" />
+  <gammagroup id="DisplaySongtickerShade" value="0,0,0" gray="2" boost="0" />
   <gammagroup id="ProgressBar" value="-870,0,-870" gray="2" boost="0" />
   <gammagroup id="BGOverlayDark" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="BGOverlayBright" value="0,0,0" gray="0" boost="0" />
@@ -2134,7 +2134,7 @@
   <gammagroup id="DisplayVis" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="DisplayBeatVis" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="DisplaySongticker" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="DisplaySongtickerShade" value="-4096,0,-1614" gray="0" boost="0" />
+  <gammagroup id="DisplaySongtickerShade" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="ProgressBar" value="-4096,0,-1614" gray="2" boost="0" />
   <gammagroup id="BGOverlayDark" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="BGOverlayBright" value="0,0,0" gray="0" boost="0" />

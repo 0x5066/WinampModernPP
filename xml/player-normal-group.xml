@@ -138,6 +138,7 @@
     ghost="1"
     image="player.songinfo.kbps"
   />
+  
   <text
     id="Bitrate"
     display="" default="(___)"
@@ -176,7 +177,7 @@
     Image="player.songinfo.eq.off"
     activeImage="player.songinfo.eq.on"
     action="EQ_TOGGLE"
-    x="93" y="0"
+    x="92" y="0"
     rectrgn="1"
     tooltip="Toggle Equalizer"
   />
@@ -483,7 +484,7 @@
     color="font.display.songticker"
     altfont="Arial"
 	visible="0"
-   />
+  />
 
   <!-- Songticker overlay -->
   <layer
