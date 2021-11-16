@@ -21,6 +21,7 @@ Function setVis (int mode);
 Function ProcessMenuResult (int a);
 Function unsmooth();
 Function smooth();
+//Function VULOGorNOT();
 
 Global Group scriptGroup;
 Global Vis visualizer;
@@ -35,9 +36,9 @@ Global PopUpMenu anasettings;
 Global PopUpMenu oscsettings;
 Global PopUpMenu vusettings;
 
-Global Int currentMode, a_falloffspeed, p_falloffspeed, vp_falloffspeed, Level1, Level2, osc_render, ana_render;
+Global Int currentMode, a_falloffspeed, p_falloffspeed, vp_falloffspeed, Level1, Level2, osc_render, ana_render, logl, logr;
 Global float peak1, peak2, pgrav1, pgrav2, vu_falloffspeed;
-Global Boolean show_peaks, show_vupeaks, vu_smooth, isShade;
+Global Boolean show_peaks, show_vupeaks, vu_smooth, /*vulog,*/ isShade;
 Global layer trigger;
 
 Global AnimatedLayer LeftMeter, RightMeter, LeftMeterPeak, RightMeterPeak;
@@ -126,6 +127,7 @@ refreshVisSettings ()
 	vp_falloffspeed = getPrivateInt(getSkinName(), "Visualizer VU peaks falloff", 2);
 	osc_render = getPrivateInt(getSkinName(), "Oscilloscope Settings", 1);
 	ana_render = getPrivateInt(getSkinName(), "Spectrum Analyzer Settings", 2);
+	//VULOG = getPrivateInt(getSkinName(), "VU Logarithmic", 0);
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	LeftMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
@@ -248,6 +250,7 @@ trigger.onRightButtonUp (int x, int y)
 	visMenu.addSubmenu(vusettings, "VU Meter Options");
 	vusettings.addCommand("Show VU Peaks", 102, show_vupeaks == 1, 0);
 	vusettings.addCommand("VU Smoothing", 103, vu_smooth == 1, 0);
+	//vusettings.addCommand("VU Logarithmic", 104, vulog == 1, 0);
 	vusettings.addSeparator();
 	vusettings.addSubmenu(vumenu, "Peak falloff Speed");
 	vumenu.addCommand("Slower", 500, vp_falloffspeed == 0, 0);
@@ -299,6 +302,13 @@ ProcessMenuResult (int a)
 		vu_smooth = (vu_smooth - 1) * (-1);
 		setPrivateInt(getSkinName(), "Smooth VU Meters", vu_smooth);
 	}
+
+//	else if (a == 104)
+//	{
+//		VULOG = (VULOG - 1) * (-1);
+//		setPrivateInt(getSkinName(), "VU Logarithmic", VULOG);
+//	}
+
 
 	else if (a >= 200 && a <= 204)
 	{
@@ -367,6 +377,8 @@ VU.onTimer(){
 //modified to remove the signal being made logarithmic, making it linear
 //gravity/peak smoothness and optimizations by mirzi
 
+//VULOGorNOT();
+
 	if(vu_smooth == 0){
 		unsmooth();
 	}else{
@@ -393,10 +405,19 @@ VU.onTimer(){
 		pgrav2 -= vu_falloffspeed;
 	}
 
-	// also add a +1 here if you don't want the peaks and bars touching
 	LeftMeterPeak.gotoFrame(peak1);
 	RightMeterPeak.gotoFrame(peak2);
 }
+
+//VULOGorNOT(){
+//	if(VULOG == 0){
+//		logl = getLeftVuMeter();
+//		logr = getRightVuMeter();
+//	}else{
+//		logl = (ln(getLeftVuMeter()))*46;
+//		logr = (ln(getRightVuMeter()))*46;
+//	}
+//}
 
 unsmooth(){
 	level1 = (getLeftVuMeter()*LeftMeter.getLength()/256);
