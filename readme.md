@@ -1,4 +1,4 @@
-# Winamp Modern-Forked
+# Winamp Modern++
 
 This is a fork of the classic Winamp Modern that aims to update the base skin on a number of small things, such as weird visual blemishes, updating code where needed, etc.
 
