@@ -1,16 +1,18 @@
 /*---------------------------------------------------
 -----------------------------------------------------
 Filename:	visualizer.m
-Version:	1.4
+Version:	2.0
 
 Type:		maki
-Date:		07. Okt. 2007 - 19:56  
-Author:		Martin Poehlmann aka Deimos
+Date:		07. Okt. 2007 - 19:56 , May 24th 2021 - 2:13am UTC+1
+Author:		Martin Poehlmann aka Deimos, Eris Lund (0x5066)
 E-Mail:		martin@skinconsortium.com
 Internet:	www.skinconsortium.com
-		www.martin.deimos.de.vu
+			www.martin.deimos.de.vu
 
-Note:		This script handles also the timer reflection
+Note:		This script revamped the vis menu and cycling
+			with the mouse, as well as adding a VU Meter
+			to be on parity with WACUP Classic
 -----------------------------------------------------
 ---------------------------------------------------*/
 
