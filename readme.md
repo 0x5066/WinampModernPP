@@ -4,6 +4,8 @@ This is a fork of the classic Winamp Modern that aims to update the base skin on
 
 There are no plans yet to make further modifications to the skin, as the current goal is to keep the original spirit of the skin alive as much as possible, whilst making the smallest of updates that keeps it tidy and modern.
 
+Before compiling the maki scripts, they assume that you invoke the compiler directly in the scripts folder (hence ``#include "..\..\..\lib/std.mi"``) and that you have your WACUP install in your path environment, if that's not the case then it won't work.
+
 ![Screenshot](https://raw.githubusercontent.com/0x5066/WinampModernForked/main/screenshot.png)
 
 This makes use of version detection (only on the master branch), where it'll run a version check on skin load and disable a few features and changes the titles of most skinned windows, if Winamp 5.8 was detected.
