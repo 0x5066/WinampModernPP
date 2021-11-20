@@ -5,7 +5,7 @@ Version:	2.0
 
 Type:		maki
 Date:		07. Okt. 2007 - 19:56 , May 24th 2021 - 2:13am UTC+1
-Author:		Martin Poehlmann aka Deimos, Eris Lund (0x5066)
+Author:		Martin Poehlmann aka Deimos, Eris Lund (0x5066), mirzi
 E-Mail:		martin@skinconsortium.com
 Internet:	www.skinconsortium.com
 			www.martin.deimos.de.vu
@@ -24,6 +24,7 @@ Function ProcessMenuResult (int a);
 Function unsmooth();
 Function smooth();
 //Function VULOGorNOT();
+Function FliptheVU(int h);
 
 Global Group scriptGroup;
 Global Vis visualizer;
@@ -184,10 +185,14 @@ trigger.onLeftButtonDown (int x, int y)
 		if (visualizer.getXmlParam("fliph") == "1")
 		{
 			visualizer.setXmlParam("fliph", "0");
+			visualizer.setXmlParam("x", "-89");
+			FliptheVU(0);
 		}
 		else
 		{
 			visualizer.setXmlParam("fliph", "1");
+			visualizer.setXmlParam("x", "-90");
+			FliptheVU(1);
 		}
 		return;
 	}
@@ -201,6 +206,36 @@ trigger.onLeftButtonDown (int x, int y)
 
 	setVis (currentMode);
 	complete;
+}
+
+FliptheVU(int h){
+	//i hate this, so much
+	if(currentmode == 3){
+
+		if(h){
+			LeftMeter.setXmlParam("image", "player.visualization.vuf");
+			RightMeter.setXmlParam("image", "player.visualization.vuf");
+			LeftMeterPeak.setXmlParam("image", "player.visualization.vupeakf");
+			RightMeterPeak.setXmlParam("image", "player.visualization.vupeakf");
+			//messagebox("player.visualization.vuf, player.visualization.vupeakf", "", 1, "");
+		}else{
+			LeftMeter.setXmlParam("image", "player.visualization.vu");
+			RightMeter.setXmlParam("image", "player.visualization.vu");
+			LeftMeterPeak.setXmlParam("image", "player.visualization.vupeak");
+			RightMeterPeak.setXmlParam("image", "player.visualization.vupeak");
+			//messagebox("player.visualization.vu, player.visualization.vupeak, 1", "", 1, "");
+		}
+
+		LeftMeter.setXmlParam("visible", "1");
+		RightMeter.setXmlParam("visible", "1");
+
+	}else{
+		LeftMeterPeak.setXmlParam("image", "");
+		RightMeterPeak.setXmlParam("image", "");
+		LeftMeter.setXmlParam("visible", "0");
+		RightMeter.setXmlParam("visible", "0");
+		//messagebox("empty, 0", "", 1, "");
+	}
 }
 
 trigger.onRightButtonUp (int x, int y)
@@ -466,11 +501,8 @@ setVis (int mode)
 	}
 	else if (mode == 3)
 	{
+		FliptheVU(h);
 		VU.start();
-		LeftMeter.setXmlParam("visible", "1");
-		RightMeter.setXmlParam("visible", "1");
-		LeftMeterPeak.setXmlParam("image", "player.visualization.vupeak");
-		RightMeterPeak.setXmlParam("image", "player.visualization.vupeak");
 		visualizer.setMode(0);
 	}
 	currentMode = mode;
