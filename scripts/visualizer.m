@@ -25,6 +25,7 @@ Function unsmooth();
 Function smooth();
 //Function VULOGorNOT();
 Function FliptheVU(int h);
+Function GRAVorNOT();
 
 Global Group scriptGroup;
 Global Vis visualizer;
@@ -41,7 +42,7 @@ Global PopUpMenu vusettings;
 
 Global Int currentMode, a_falloffspeed, p_falloffspeed, vp_falloffspeed, Level1, Level2, osc_render, ana_render, logl, logr;
 Global float peak1, peak2, pgrav1, pgrav2, vu_falloffspeed;
-Global Boolean show_peaks, show_vupeaks, vu_smooth, /*vulog,*/ isShade;
+Global Boolean show_peaks, show_vupeaks, vu_smooth, /*vulog,*/ vu_gravity, isShade;
 Global layer trigger;
 
 Global AnimatedLayer LeftMeter, RightMeter, LeftMeterPeak, RightMeterPeak;
@@ -131,6 +132,7 @@ refreshVisSettings ()
 	osc_render = getPrivateInt(getSkinName(), "Oscilloscope Settings", 1);
 	ana_render = getPrivateInt(getSkinName(), "Spectrum Analyzer Settings", 2);
 	//VULOG = getPrivateInt(getSkinName(), "VU Logarithmic", 0);
+	vu_gravity = getPrivateInt(getSkinName(), "VU Peak Gravity", 1);
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	LeftMeterPeak.setXmlParam("visible", integerToString(show_vupeaks));
@@ -284,6 +286,8 @@ trigger.onRightButtonUp (int x, int y)
 	oscsettings.addCommand("Solid", 602, osc_render == 2, 0);
 	visMenu.addSubmenu(vusettings, "VU Meter Options");
 	vusettings.addCommand("Show VU Peaks", 102, show_vupeaks == 1, 0);
+	vusettings.addCommand("Smooth VU Peak falloff", 105, vu_gravity == 1, 0);
+	vusettings.addSeparator();
 	vusettings.addCommand("VU Smoothing", 103, vu_smooth == 1, 0);
 	//vusettings.addCommand("VU Logarithmic", 104, vulog == 1, 0);
 	vusettings.addSeparator();
@@ -344,6 +348,11 @@ ProcessMenuResult (int a)
 //		setPrivateInt(getSkinName(), "VU Logarithmic", VULOG);
 //	}
 
+	else if (a == 105)
+	{
+		vu_gravity = (vu_gravity - 1) * (-1);
+		setPrivateInt(getSkinName(), "VU Peak Gravity", vu_gravity);
+	}
 
 	else if (a >= 200 && a <= 204)
 	{
@@ -423,25 +432,48 @@ VU.onTimer(){
     LeftMeter.gotoFrame(level1);
     RightMeter.gotoFrame(level2);
 
-	if (level1 >= peak1){
-		peak1 = level1;
-		pgrav1 = 0;
-	}
-	else{
-		peak1 += pgrav1;
-		pgrav1 -= vu_falloffspeed;
-	}
-	if (level2 >= peak2){
-		peak2 = level2;
-		pgrav2 = 0;
-	}
-	else{
-		peak2 += pgrav2;
-		pgrav2 -= vu_falloffspeed;
-	}
+	GRAVorNOT();
 
 	LeftMeterPeak.gotoFrame(peak1);
 	RightMeterPeak.gotoFrame(peak2);
+}
+
+GRAVorNOT(){
+	if(vu_gravity == 0){
+		if (level1 >= peak1){
+			peak1 = level1;
+			//pgrav1 = 0;
+		}
+		else{
+			//peak1 += pgrav1;
+			peak1 -= vu_falloffspeed*60;
+		}
+		if (level2 >= peak2){
+			peak2 = level2;
+			//pgrav2 = 0;
+		}
+		else{
+			//peak2 += pgrav2;
+			peak2 -= vu_falloffspeed*60;
+		}
+	}else{
+		if (level1 >= peak1){
+			peak1 = level1;
+			pgrav1 = 0;
+		}
+		else{
+			peak1 += pgrav1;
+			pgrav1 -= vu_falloffspeed;
+		}
+		if (level2 >= peak2){
+			peak2 = level2;
+			pgrav2 = 0;
+		}
+		else{
+			peak2 += pgrav2;
+			pgrav2 -= vu_falloffspeed;
+		}
+	}
 }
 
 //VULOGorNOT(){
