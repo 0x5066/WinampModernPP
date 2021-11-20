@@ -185,13 +185,11 @@ trigger.onLeftButtonDown (int x, int y)
 		if (visualizer.getXmlParam("fliph") == "1")
 		{
 			visualizer.setXmlParam("fliph", "0");
-			visualizer.setXmlParam("x", "-89");
 			FliptheVU(0);
 		}
 		else
 		{
 			visualizer.setXmlParam("fliph", "1");
-			visualizer.setXmlParam("x", "-90");
 			FliptheVU(1);
 		}
 		return;
