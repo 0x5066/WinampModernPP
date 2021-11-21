@@ -300,6 +300,8 @@ trigger.onRightButtonUp (int x, int y)
 
 	ProcessMenuResult (visMenu.popAtMouse());
 
+	FliptheVU(h);
+
 	delete visMenu;
 	delete pksmenu;
 	delete anamenu;
