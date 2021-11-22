@@ -3,12 +3,12 @@
 
 Global Group frameGroup;
 Global Togglebutton ShuffleBtn,RepeatBtn,ShuffleBtn2,RepeatBtn2;
-Global Timer SongTickerTimer, nanoTimer;
+Global Timer SongTickerTimer, nanoTimer, sadsTimer;
 Global Text InfoTicker;
 Global GuiObject SongTicker;
 Global Slider Balance;
 Global Layout normal;
-Global int reallyrandom, i;
+Global int reallyrandom, i, ii;
 Global String dankpods;
 
 function setSongtickerScrolling();
@@ -26,6 +26,9 @@ System.onScriptLoaded() {
 
 	nanoTimer = new Timer;
 	nanoTimer.setDelay(300);
+
+	sadsTimer = new Timer;
+	sadsTimer.setDelay(800);
 
 	RepeatBtn = frameGroup.findObject("Repeat");
 	ShuffleBtn = frameGroup.findObject("Shuffle");
@@ -78,7 +81,8 @@ Balance.onSetPosition(int newpos)
 SongTicker.onLeftButtonDown (int x, int y)
 {
 	//i'm so sorry for this.
-	reallyrandom = random(9);
+	reallyrandom = random(12); //apparently it never hits the maximum?
+	//reallyrandom = 11;
 
 	String extension = System.strlower(System.getExtension(System.removePath(System.getPlayItemString())));
 
@@ -96,13 +100,15 @@ SongTicker.onLeftButtonDown (int x, int y)
 	else if(reallyrandom == 7) {dankpods = ""; i = 0; nanoTimer.start();}
 	else if(reallyrandom == 8) dankpods = "Oh my PKcells...";
 	else if(reallyrandom == 9) dankpods = "Also known as: the bare minimum.";
+	else if(reallyrandom == 10) dankpods = "Oh dingus!";
+	else if(reallyrandom == 11) {dankpods = ""; ii = 0; sadsTimer.start();}
 
 	InfoTicker.setText(dankpods);
 
 	SongTicker.hide();
 	InfoTicker.show();
 
-		if(reallyrandom != 7){
+		if(reallyrandom != 7 && reallyrandom != 11){
 			SongTickerTimer.start();
 		}
 	}
@@ -119,6 +125,21 @@ nanoTimer.onTimer(){
 		InfoTicker.hide();
 	}
 	i++;
+}
+
+sadsTimer.onTimer(){
+	if(ii == 0){
+		InfoTicker.setText("It's got             ");
+	}else if(ii == 1){
+		InfoTicker.setText("It's got the sads.   ");
+	}else if(ii == 2){
+		InfoTicker.setText("It's got the sads. :(");
+	}else if(ii == 4){
+		sadsTimer.stop();
+		SongTicker.show();
+		InfoTicker.hide();
+	}
+	ii++;
 }
 
 RepeatBtn.onToggle(boolean on) {
