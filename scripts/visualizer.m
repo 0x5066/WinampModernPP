@@ -26,6 +26,7 @@ Function smooth();
 //Function VULOGorNOT();
 Function FliptheVU(int h);
 Function GRAVorNOT();
+Function SetVUState();
 
 Global Group scriptGroup;
 Global Vis visualizer;
@@ -83,32 +84,34 @@ System.onScriptLoaded()
 	vuStopTimer = new Timer;
 	vuStopTimer.setdelay(1000);
 
+	SetVUState();
+
 	refreshVisSettings();
 }
 
 // saving those precious cycles
 System.onStop(){
-	if(currentMode == 6){
+	if(currentMode == 3){
 		VU.start(); //prevents VU meter getting stuck on stop
 		VUStopTimer.start();
 	}
 }
 
 System.onPause(){
-	if(currentMode == 6){
+	if(currentMode == 3){
 		VUStopTimer.start();
 	}
 }
 
 System.onResume(){
-	if(currentMode == 6){
+	if(currentMode == 3){
 		VUStopTimer.stop();
 		VU.start();
 	}
 }
 
 System.onPlay(){
-	if(currentMode == 6){
+	if(currentMode == 3){
 		VUStopTimer.stop();
 		VU.start();
 	}
@@ -118,6 +121,36 @@ System.onPlay(){
 VUStopTimer.onTimer(){
 	VUStopTimer.stop();
 	VU.stop();
+}
+
+FliptheVU(int h){
+	//i hate this, so much
+	if(currentmode == 3){
+
+		if(h){
+			LeftMeter.setXmlParam("image", "player.visualization.vuf");
+			RightMeter.setXmlParam("image", "player.visualization.vuf");
+			LeftMeterPeak.setXmlParam("image", "player.visualization.vupeakf");
+			RightMeterPeak.setXmlParam("image", "player.visualization.vupeakf");
+			//messagebox("player.visualization.vuf, player.visualization.vupeakf", "", 1, "");
+		}else{
+			LeftMeter.setXmlParam("image", "player.visualization.vu");
+			RightMeter.setXmlParam("image", "player.visualization.vu");
+			LeftMeterPeak.setXmlParam("image", "player.visualization.vupeak");
+			RightMeterPeak.setXmlParam("image", "player.visualization.vupeak");
+			//messagebox("player.visualization.vu, player.visualization.vupeak, 1", "", 1, "");
+		}
+
+		LeftMeter.setXmlParam("visible", "1");
+		RightMeter.setXmlParam("visible", "1");
+
+	}else{
+		LeftMeterPeak.setXmlParam("image", "");
+		RightMeterPeak.setXmlParam("image", "");
+		LeftMeter.setXmlParam("visible", "0");
+		RightMeter.setXmlParam("visible", "0");
+		//messagebox("empty, 0", "", 1, "");
+	}
 }
 
 refreshVisSettings ()
@@ -176,7 +209,7 @@ refreshVisSettings ()
 		}
 	setPrivateInt(getSkinName(), "Spectrum Analyzer Settings", ana_render);
 
-    if (currentMode >= 5) currentMode = 1;
+    if (currentMode >= 4) {currentMode = 1; FliptheVU(h);} 
 	setVis (currentMode);
 }
 
@@ -206,36 +239,6 @@ trigger.onLeftButtonDown (int x, int y)
 
 	setVis (currentMode);
 	complete;
-}
-
-FliptheVU(int h){
-	//i hate this, so much
-	if(currentmode == 3){
-
-		if(h){
-			LeftMeter.setXmlParam("image", "player.visualization.vuf");
-			RightMeter.setXmlParam("image", "player.visualization.vuf");
-			LeftMeterPeak.setXmlParam("image", "player.visualization.vupeakf");
-			RightMeterPeak.setXmlParam("image", "player.visualization.vupeakf");
-			//messagebox("player.visualization.vuf, player.visualization.vupeakf", "", 1, "");
-		}else{
-			LeftMeter.setXmlParam("image", "player.visualization.vu");
-			RightMeter.setXmlParam("image", "player.visualization.vu");
-			LeftMeterPeak.setXmlParam("image", "player.visualization.vupeak");
-			RightMeterPeak.setXmlParam("image", "player.visualization.vupeak");
-			//messagebox("player.visualization.vu, player.visualization.vupeak, 1", "", 1, "");
-		}
-
-		LeftMeter.setXmlParam("visible", "1");
-		RightMeter.setXmlParam("visible", "1");
-
-	}else{
-		LeftMeterPeak.setXmlParam("image", "");
-		RightMeterPeak.setXmlParam("image", "");
-		LeftMeter.setXmlParam("visible", "0");
-		RightMeter.setXmlParam("visible", "0");
-		//messagebox("empty, 0", "", 1, "");
-	}
 }
 
 trigger.onRightButtonUp (int x, int y)
@@ -343,13 +346,13 @@ ProcessMenuResult (int a)
 		vu_smooth = (vu_smooth - 1) * (-1);
 		setPrivateInt(getSkinName(), "Smooth VU Meters", vu_smooth);
 	}
-
-//	else if (a == 104)
-//	{
-//		VULOG = (VULOG - 1) * (-1);
-//		setPrivateInt(getSkinName(), "VU Logarithmic", VULOG);
-//	}
-
+/*
+	else if (a == 104)
+	{
+		VULOG = (VULOG - 1) * (-1);
+		setPrivateInt(getSkinName(), "VU Logarithmic", VULOG);
+	}
+*/
 	else if (a == 105)
 	{
 		vu_gravity = (vu_gravity - 1) * (-1);
@@ -440,6 +443,25 @@ VU.onTimer(){
 	RightMeterPeak.gotoFrame(peak2);
 }
 
+SetVUState(){
+
+	VULOGorNOT();
+
+	if(vu_smooth == 0){
+		unsmooth();
+	}else{
+		smooth();
+	}
+
+    LeftMeter.gotoFrame(level1);
+    RightMeter.gotoFrame(level2);
+
+	GRAVorNOT();
+
+	LeftMeterPeak.gotoFrame(peak1);
+	RightMeterPeak.gotoFrame(peak2);
+}
+
 GRAVorNOT(){
 	if(vu_gravity == 0){
 		if (level1 >= peak1){
@@ -477,17 +499,17 @@ GRAVorNOT(){
 		}
 	}
 }
-
-//VULOGorNOT(){
-//	if(VULOG == 0){
-//		logl = getLeftVuMeter();
-//		logr = getRightVuMeter();
-//	}else{
-//		logl = (ln(getLeftVuMeter()))*46;
-//		logr = (ln(getRightVuMeter()))*46;
-//	}
-//}
-
+/*
+VULOGorNOT(){
+	if(VULOG == 0){
+		logl = getLeftVuMeter();
+		logr = getRightVuMeter();
+	}else{
+		logl = (ln(getLeftVuMeter()))*46;
+		logr = (ln(getRightVuMeter()))*46;
+	}
+}
+*/
 unsmooth(){
 	level1 = (getLeftVuMeter()*LeftMeter.getLength()/256);
 	level2 = (getRightVuMeter()*RightMeter.getLength()/256);
