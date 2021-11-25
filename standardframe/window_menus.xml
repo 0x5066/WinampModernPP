@@ -64,7 +64,7 @@
   <group id="menugroup.options"/>
   <group id="menugroup.view"/>
   <group id="menugroup.help"/>
-  <script id="mainmenu.script" file="scripts/menualign.maki" param="menugroup.file,menugroup.play,menugroup.options,menugroup.view,menugroup.help"/>
+  <script id="mainmenu.script" file="../Winamp Modern/scripts/menualign.maki" param="menugroup.file,menugroup.play,menugroup.options,menugroup.view,menugroup.help"/>
 </groupdef>
 
 <groupdef id="menugroup.pe_file" autowidthsource="label.txt" h="16">
@@ -104,7 +104,7 @@
   <group id="menugroup.pe_playlist"/>
   <group id="menugroup.pe_sort"/>
   <group id="menugroup.pe_help"/>
-  <script id="mainmenu.script" file="scripts/menualign.maki" param="menugroup.pe_file,menugroup.pe_playlist,menugroup.pe_sort,menugroup.pe_help"/>
+  <script id="mainmenu.script" file="../Winamp Modern/scripts/menualign.maki" param="menugroup.pe_file,menugroup.pe_playlist,menugroup.pe_sort,menugroup.pe_help"/>
 </groupdef>
 
 <groupdef id="menugroup.ml_file" autowidthsource="label.txt" h="16">
@@ -135,7 +135,7 @@
   <group id="menugroup.ml_file"/>
   <group id="menugroup.ml_view"/>
   <group id="menugroup.ml_help"/>
-  <script id="mainmenu.script" file="scripts/menualign.maki" param="menugroup.ml_file,menugroup.ml_view,menugroup.ml_help"/>
+  <script id="mainmenu.script" file="../Winamp Modern/scripts/menualign.maki" param="menugroup.ml_file,menugroup.ml_view,menugroup.ml_help"/>
 </groupdef>
 
 
@@ -175,7 +175,7 @@
     image="wasabi.menubar.right.textoverlay"
   />
   <group id="menu.group" x="1" y="0"/>
-  <script id="mainmenuoverlay.script" file="scripts/mainmenuoverlay.maki" />
+  <script id="mainmenuoverlay.script" file="../Winamp Modern/scripts/mainmenuoverlay.maki" />
 </groupdef>
 
 <groupdef id="wasabi.menubar.pl" background="wasabi.frame.basetexture" h="17">

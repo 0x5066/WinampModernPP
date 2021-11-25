@@ -57,6 +57,6 @@
 	<windowholder id="wdh.playlist" h="0" x="0" w="0" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>
 
 <group id="PlaylistPro.topbar" x="0" y="0" w="0" h="30" relatw="1" visible="0"/>
-		<script file="scripts/playlistpro.maki"/>
+		<script file="../Winamp Modern/scripts/playlistpro.maki"/>
 </groupdef>
 

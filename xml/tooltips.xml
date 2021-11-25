@@ -14,6 +14,6 @@
 
 	<rect id="tooltip.grid" x="0" y="0" w="0" h="17" sysregion="1" relatw="1" filled="0" color="0,0,0"/>
 
-	<script id="tip" file="scripts\tooltips.maki"/>
+	<script id="tip" file="../Winamp Modern/scripts\tooltips.maki"/>
 
 </groupdef>

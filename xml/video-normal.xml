@@ -201,7 +201,7 @@
 
 <groupdef id="video.content.group" name="PlaylistContent">
   <group id="player.content.video.dummy.group" x="0" y="0" sysregion="1"/>
-  <script id="video.script" file="scripts/video.maki" />
+  <script id="video.script" file="../Winamp Modern/scripts/video.maki" />
 </groupdef>
 
 

@@ -207,8 +207,8 @@
 
 <groupdef id="pledit.content.group" name="PlaylistContent">
   <group id="player.content.pl.dummy.group" x="0" y="17" sysregion="1"/>
-  <script id="plmenu.script" file="scripts/plmenu.maki" />
-  <script id="pltime.script" file="scripts/pltime.maki" />
+  <script id="plmenu.script" file="../Winamp Modern/scripts/plmenu.maki" />
+  <script id="pltime.script" file="../Winamp Modern/scripts/pltime.maki" />
 </groupdef>
 
 <layout id="normal" minimum_w="354" minimum_h="164" h="164" w="436" linkwidth="shade" appbar="left|top|right|bottom">

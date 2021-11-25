@@ -190,7 +190,7 @@
 
 <groupdef id="vis.content.group" name="PlaylistContent">
   <group id="player.content.vis.dummy.group" x="0" y="0" sysregion="1"/>
-  <script id="vis.script" file="scripts/vis.maki" />
+  <script id="vis.script" file="../Winamp Modern/scripts/vis.maki" />
 </groupdef>
 
 

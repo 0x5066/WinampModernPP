@@ -6,4 +6,4 @@
 </container>
 
 <!-- this script runs independently -->
-<script file="scripts/notifier.maki"/>
+<script file="../Winamp Modern/scripts/notifier.maki"/>
