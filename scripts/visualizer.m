@@ -82,7 +82,7 @@ System.onScriptLoaded()
 	VU.setdelay(16);
 
 	vuStopTimer = new Timer;
-	vuStopTimer.setdelay(1000);
+	vuStopTimer.setdelay(2000);
 
 	SetVUState();
 
