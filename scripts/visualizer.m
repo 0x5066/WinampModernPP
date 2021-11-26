@@ -445,7 +445,7 @@ VU.onTimer(){
 
 SetVUState(){
 
-	VULOGorNOT();
+	//VULOGorNOT();
 
 	if(vu_smooth == 0){
 		unsmooth();
