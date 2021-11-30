@@ -2258,7 +2258,7 @@
   <gammagroup id="Scrollbar Hover" value="333,333,333" gray="0" boost="0" />
   <gammagroup id="Led" value="-4096,0,-4096" gray="2" boost="0" />
   <gammagroup id="Display" value="-3096,-3096,-3096" gray="2" boost="0" />
-  <gammagroup id="DisplaySongtickerBG" value="-3096,-3096,-3096" gray="0" boost="0" />
+  <gammagroup id="DisplaySongtickerBG" value="-3096,-3096,-3096" gray="1" boost="0" />
   <gammagroup id="DisplayElements" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="DisplayVis" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="DisplayBeatVis" value="0,0,0" gray="0" boost="0" />
