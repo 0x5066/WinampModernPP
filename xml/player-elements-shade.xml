@@ -140,7 +140,7 @@
 
 <!-- SONGTICKERFONT -->
     <bitmap id="bitmapfont.shade.songticker" file="../Winamp Modern/shade/songtickerfont.png" x="0" y="0" h="40" w="300" gammagroup="DisplaySongtickerShade"/>
-    <bitmapfont id="shade.songticker.font" file="../Winamp Modern/bitmapfont.shade.songticker" charwidth="7" charheight="12" hspacing="-1" vspacing="0"/>
+    <bitmapfont id="shade.songticker.font" file="bitmapfont.shade.songticker" charwidth="7" charheight="12" hspacing="-1" vspacing="0"/>
 
 <!-- CLOSE/MINIMIZE... -->
     <bitmap id="shade.button.winshade" file="../Winamp Modern/window/titlebar.png" x="0" y="140" h="10" w="11" gammagroup="TitlebarElements"/>
