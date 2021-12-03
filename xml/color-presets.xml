@@ -2405,3 +2405,46 @@
   <gammagroup id="ListSelBackground" value="-1686,-2281,-4096" gray="2" boost="0" />
   <gammagroup id="ListColumnText" value="-1508,-1508,-1508" gray="0" boost="0" />
 </gammaset>
+
+<gammaset id="Refugee">
+  <gammagroup id="Backgrounds" value="-3153,-3153,-3153" gray="0" boost="0" />
+  <gammagroup id="Backgrounds2" value="-3650,-3650,-3650" gray="0" boost="0" />
+  <gammagroup id="Bolt" value="-1700,-1700,-1700" gray="2" boost="0" />
+  <gammagroup id="Menubar" value="-3400,-3400,-3400" gray="0" boost="0" />
+  <gammagroup id="MenubarText" value="2500,2500,2500" gray="2" boost="1" />
+  <gammagroup id="Titlebar" value="-3000,-3000,-3000" gray="1" boost="0" />
+  <gammagroup id="TitlebarText" value="4096,4096,4096" gray="0" boost="1" />
+  <gammagroup id="TitlebarElements" value="-1461,-1461,-1461" gray="1" boost="0" />
+  <gammagroup id="TitlebarHover" value="-2040,-1295,2180" gray="0" boost="0" />
+  <gammagroup id="Text" value="-1000,0,4096" gray="0" boost="1" />
+  <gammagroup id="Text Inverse" value="-4096,-2501,1578" gray="0" boost="1" />
+  <gammagroup id="Buttons" value="-2691,-2691,-2691" gray="0" boost="0" />
+  <gammagroup id="ButtonsHover" value="-2248,-2248,-2248" gray="0" boost="1" />
+  <gammagroup id="Buttons2" value="-2691,-2691,-2691" gray="0" boost="0" />
+  <gammagroup id="ButtonsHover2" value="-2248,-2248,-2248" gray="0" boost="1" />
+  <gammagroup id="ButtonGlow" value="-4096,-1189,549" gray="0" boost="0" />
+  <gammagroup id="ButtonsActive" value="-4096,336,4096" gray="0" boost="0" />
+  <gammagroup id="ButtonStatus" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="2500,2500,2500" gray="0" boost="1" />
+  <gammagroup id="Scrollbar Buttons" value="-2691,-2691,-2691" gray="1" boost="1" />
+  <gammagroup id="Scrollbar Hover" value="-2248,-2248,-2248" gray="1" boost="0" />
+  <gammagroup id="Led" value="-2944,-160,3103" gray="0" boost="0" />
+  <gammagroup id="Display" value="-3935,-3806,-3678" gray="0" boost="0" />
+  <gammagroup id="DisplaySongtickerBG" value="-2435,-2306,-2178" gray="0" boost="0" />
+  <gammagroup id="DisplayElements" value="-3517,-1622,0" gray="0" boost="0" />
+  <gammagroup id="DisplayVis" value="-3935,-2040,-834" gray="0" boost="0" />
+  <gammagroup id="DisplayBeatVis" value="-3935,-2040,-834" gray="0" boost="0" />
+  <gammagroup id="DisplaySongticker" value="-2217,-727,1932" gray="0" boost="0" />
+  <gammagroup id="DisplaySongtickerShade" value="-3584,-905,4064" gray="0" boost="0" />
+  <gammagroup id="ProgressBar" value="-3517,-1622,0" gray="0" boost="1" />
+  <gammagroup id="BGOverlayDark" value="1400,1400,1400" gray="2" boost="1" />
+  <gammagroup id="BGOverlayBright" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BG2Textoverlay" value="2500,2500,2500" gray="0" boost="1" />
+  <gammagroup id="TextDark" value="2500,2500,2500" gray="0" boost="1" />
+  <gammagroup id="ListText" value="-3068,-1543,2606" gray="0" boost="1" />
+  <gammagroup id="ListTextSelected" value="-3068,-1543,2606" gray="0" boost="1" />
+  <gammagroup id="ListTextCurrent" value="0,0,0" gray="2" boost="0" />
+  <gammagroup id="ListBackground" value="-3891,-3686,-3502" gray="0" boost="0" />
+  <gammagroup id="ListSelBackground" value="-3678,-3549,-3212" gray="0" boost="1" />
+  <gammagroup id="ListColumnText" value="-3068,301,2606" gray="0" boost="1" />
+</gammaset>

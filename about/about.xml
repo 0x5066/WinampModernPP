@@ -131,8 +131,20 @@
     default=""
   />
 
+  <!--text
+    id="debug.text"
+    color="font.about.color2"
+    x="0" y="0"
+    w="600"
+    h="600"
+    valign="top"
+    align="left"
+    fontsize="9"
+    default=""
+  /-->
+
  <guiobject fitparent="1" />
 
- <script file="about/about.maki"/>
+ <script file="../Winamp Modern/about/about.maki"/>
 
 </groupdef>
