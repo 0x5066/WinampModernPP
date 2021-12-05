@@ -2426,8 +2426,8 @@
   <gammagroup id="ButtonsActive" value="-4096,336,4096" gray="0" boost="0" />
   <gammagroup id="ButtonStatus" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="ButtonText" value="2500,2500,2500" gray="0" boost="1" />
-  <gammagroup id="Scrollbar Buttons" value="-2691,-2691,-2691" gray="1" boost="1" />
-  <gammagroup id="Scrollbar Hover" value="-2248,-2248,-2248" gray="1" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="-2750,-2750,-2750" gray="1" boost="0" />
+  <gammagroup id="Scrollbar Hover" value="-2248,-2248,-2248" gray="1" boost="1" />
   <gammagroup id="Led" value="-2944,-160,3103" gray="0" boost="0" />
   <gammagroup id="Display" value="-3935,-3806,-3678" gray="0" boost="0" />
   <gammagroup id="DisplaySongtickerBG" value="-2435,-2306,-2178" gray="0" boost="0" />
