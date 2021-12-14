@@ -55,7 +55,7 @@
 	<include file="xml/tooltips.xml"/>
 
 	<scripts>
-		<script file="scripts\MMdisplay.maki"/>
+		<script file="scripts\wa2songtimer.maki"/>
 	</scripts>
 
 </WasabiXML>
