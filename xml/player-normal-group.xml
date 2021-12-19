@@ -138,7 +138,7 @@
     ghost="1"
     image="player.songinfo.kbps"
   />
-  
+
   <text
     id="Bitrate"
     display="" default="(___)"
@@ -469,7 +469,7 @@
     color="font.display.songticker"
     altfont="Arial"
   />
-  
+
   <Text
     id="Infoticker"
     x="8" y="43"
@@ -1067,11 +1067,15 @@
   />
 
   <ProgressGrid
-    w="-109" h="4" relatw="1"
+    id="ProgressBar"
+    w="-110" h="4" relatw="1"
     orientation="right"
-    x="10" y="79"
+    x="9" y="79"
+    left="player.progressbar.left"
     middle="player.progressbar.center"
   />
+
+  <script file="scripts/pbswitch.maki"/>
 
   <slider
     id="Seeker"
@@ -1096,8 +1100,6 @@
     hoverThumb="player.button.seek.hover"
     tooltip="Seeker"
   />
-
-
 
   <!-- Shuffle / Repeat -->
   <layer
