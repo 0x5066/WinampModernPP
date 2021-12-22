@@ -10,7 +10,11 @@ Global Layer lcenter;
 Global Group sg;
 Global int padleft, padright;
 
+Global Boolean IsWine;
+
 System.onScriptLoaded() {
+
+  IsWine = stringToInteger(getToken(getParam(), ";", 3));
 
   padleft = 0;
   padright = 0;
@@ -29,6 +33,11 @@ System.onScriptLoaded() {
     lcenter = center.findObject("window.titlebar.title.overlay");
   }
   right = sg.findObject(getToken(getParam(), ";", 2));
+
+  if(IsWine != NULL){
+    tcenter.setXmlParam("y", "3");
+  }
+
 }
 
 // backward compatibility with prerelease notify trick

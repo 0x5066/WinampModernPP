@@ -10,7 +10,11 @@ Global Layer lcenter, holly_l, holly_r;
 Global Group sg;
 Global int padleft, padright;
 
+Global Boolean IsWine;
+
 System.onScriptLoaded() {
+
+  IsWine = stringToInteger(getToken(getParam(), ";", 3));
 
   padleft = 0;
   padright = 0;
@@ -32,6 +36,10 @@ System.onScriptLoaded() {
   
   holly_l = sg.findObject("player.main.xmasholly.l");
   holly_r = sg.findObject("player.main.xmasholly.r");
+
+  if(IsWine != NULL){
+    tcenter.setXmlParam("y", "3");
+  }
 }
 
 // backward compatibility with prerelease notify trick
