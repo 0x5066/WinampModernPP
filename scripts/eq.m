@@ -1,5 +1,5 @@
-#include <lib/std.mi>
-#include <lib/winampconfig.mi>
+#include "..\..\..\lib/std.mi"
+#include "..\..\..\lib/winampconfig.mi"
 
 Global Group frameGroup, use;
 Global Button btnEQp12,btnEQ0,btnEQm12;
@@ -33,7 +33,7 @@ btnEQp12.onLeftClick() {
 
 btnEQ0.onLeftClick() {
 	manual_set = 1;
-	for(int i=0; i<10; i++) setEqBand(i, 0);
+	for(int i=0; i<10; i++) setEqBand(i, 1);
 	manual_set = 0;
 }
 
