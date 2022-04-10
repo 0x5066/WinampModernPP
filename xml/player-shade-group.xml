@@ -442,6 +442,11 @@
     altfontsize="13"
     altbold="1"
   />
+
+  <layer id="TimerTrigger" 
+  x="18" y="4"
+  w="40" h="12"/>
+
 </groupdef>
 
 
