@@ -45,7 +45,6 @@
     ghost="1"
   />
 
-
   <!-- PREVIOUS -->
   <layer
     id="Previous.bg"
@@ -357,6 +356,10 @@
     pauseBitmap="player.status.pause"
   />
 
+  <layer id="playbackstatus" x="14" y="25" image="wa.play.green"/>
+
+  <script file="../Winamp Modern/scripts/classicplaystatus.maki" />
+
   <!-- Visualization -->
   <layer
     id="visualization.background"
@@ -472,8 +475,8 @@
     fontsize="18"
     color="font.display.songticker"
     altfont="Arial"
-  />
-
+   />
+  
   <Text
     id="Infoticker"
     x="8" y="43"
@@ -488,7 +491,7 @@
     color="font.display.songticker"
     altfont="Arial"
 	visible="0"
-  />
+   />
 
   <!-- Songticker overlay -->
   <layer

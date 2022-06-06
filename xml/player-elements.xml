@@ -420,6 +420,9 @@
   <bitmap id="player.status.play" file="../Winamp Modern/player/playbackstatus.png" x="20" y="0" h="23" w="10" gammagroup="DisplayElements"/>
   <bitmap id="player.status.pause" file="../Winamp Modern/player/playbackstatus.png" x="40" y="0" h="23" w="10" gammagroup="DisplayElements"/>
 
+  <bitmap id="wa.play.green" file="../Winamp Modern/player/playbacksymbol.png" x="0" y="0" w="4" h="8" gammagroup="DisplayElements"/>
+	<bitmap id="wa.play.red" file="../Winamp Modern/player/playbacksymbol.png" x="4" y="0" w="4" h="8" gammagroup="DisplayElements"/>
+
 <!-- VISUALIZATION -->
   <bitmap id="player.visualization.vu" file="../Winamp Modern/player/vu.png" x="0" y="0" h="73" w="72" gammagroup="DisplayVis"/>
   <bitmap id="player.visualization.vupeak" file="../Winamp Modern/player/vupeaks.png" x="0" y="0" h="73" w="72" gammagroup="DisplayVis"/>
