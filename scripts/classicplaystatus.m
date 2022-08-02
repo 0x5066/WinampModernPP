@@ -3,7 +3,7 @@
 //Handles empty kbps and khz and streaming related things.
 
 #include "..\..\..\lib/std.mi"
-#include "songinfo.m"
+#include "songinfo_new.m"
 
 Global Group player;
 Global layer playstatus;
@@ -63,6 +63,7 @@ System.onResume()
 
 System.onPlay()
 {
+	getSonginfo(getSongInfoText());
     String sit = getSongInfoText();
 	if (sit != "") getSonginfo(sit);
 	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
