@@ -1,22 +1,31 @@
-//Helper library for the play symbol to switch it's green or red state
-//according to the available kbps and khz data.
+#include "..\..\..\lib/std.mi"
 
 Function string tokenizeSongInfo(String tkn, String sinfo);
 Function getSonginfo(String SongInfoString);
-Function initSongInfoGrabber();
-Function deleteSongInfoGrabber();
+Function loadPlaylistArtWork();
+
+Global Group frameGroup;
+Global Layer channelDisplay;
+Global Text bitrateText, FrequencyText;
 Global Timer songInfoTimer;
 Global String SongInfoString;
+Global AlbumArtLayer waaa;
+Global Int waaaRetries = 0;
 
-Global int bitrateint, freqint;
+System.onScriptLoaded(){
+	frameGroup = getScriptGroup();
 
-initSongInfoGrabber(){
+	bitrateText = frameGroup.findObject("Bitrate");
+	frequencyText = frameGroup.findObject("Frequency");
+
+	channelDisplay = frameGroup.findObject("channels");
 
 	songInfoTimer = new Timer;
 	songInfoTimer.setDelay(250);
 
 	if (getStatus() == STATUS_PLAYING) {
 		String sit = getSongInfoText();
+		waaaRetries = 0;
 		if (sit != "") getSonginfo(sit);
 		else songInfoTimer.setDelay(250); // goes to 250ms once info is available
 		songInfoTimer.start();
@@ -25,8 +34,79 @@ initSongInfoGrabber(){
 	}
 }
 
-deleteSongInfoGrabber(){
+loadPlaylistArtWork()
+{
+	Container albumart = System.getContainer("winamp.albumart");
+	if(albumart)
+	{
+		Layout aalayout = albumart.getLayout("normal");
+		if(aalayout)
+		{
+			waaa = aalayout.findObject("waaa");
+		}
+	}
+}
+
+System.onScriptUnloading(){
 	delete songInfoTimer;
+}
+
+System.onPlay(){
+	String sit = getSongInfoText();
+	waaaRetries = 0;
+	if (sit != "") getSonginfo(sit);
+	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	songInfoTimer.start();
+	getSonginfo(getSongInfoText());
+}
+
+System.onTitleChange(String newtitle){
+	String sit = getSongInfoText();
+	waaaRetries = 0;
+	if (sit != "") getSonginfo(sit);
+	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	songInfoTimer.start();
+}
+
+System.onStop(){
+	waaaRetries = 0;
+	songInfoTimer.stop();
+	frequencyText.setText("(__)");
+	bitrateText.setText("(___)");
+	channelDisplay.setXmlParam("image", "player.songinfo.none");
+}
+
+System.onResume(){
+	String sit = getSongInfoText();
+	if (sit != "") getSonginfo(sit);
+	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	songInfoTimer.start();
+}
+
+System.onPause(){
+	songInfoTimer.stop();
+}
+
+songInfoTimer.onTimer(){
+	String sit = getSongInfoText();
+	if (sit == "") return;
+	songInfoTimer.setDelay(250);
+	getSonginfo(sit);
+
+	if(!waaa) loadPlaylistArtWork();
+	if(waaa)
+	{
+		if(waaa.isInvalid() && waaaRetries < 5)
+		{
+			waaaRetries += 1;
+			waaa.refresh();
+			waaa.show();
+		}
+		else if(!waaa.isInvalid())
+		{
+			waaaRetries = 0;
+		}
+	}
 }
 
 String tokenizeSongInfo(String tkn, String sinfo){
@@ -84,8 +164,23 @@ getSonginfo(String SongInfoString) {
 	String tkn;
 
 	tkn = tokenizeSongInfo("Bitrate", SongInfoString);
-    bitrateint = System.Stringtointeger(tkn);
+	int bitrateint = System.Stringtointeger(tkn);
+	String bitratestring = System.IntegerToString(bitrateint);
+	if(tkn != "") {bitrateText.setText("["+tkn+"]");}
+	if(bitrateint < 100) {bitrateText.setText("[ "+tkn+"]");}
+	if(bitrateint < 10) {bitrateText.setText("[  "+tkn+"]");}
+	//if(bitrateint > 1000) {bitrateText.setText("["+strleft(tkn, 2)+"H]");} //what's this? Hhousands?
+	//if(bitrateint > 10000) {bitrateText.setText("[ "+strleft(tkn, 1)+"C]");} //Cillions???
+	if(bitrateint == 0) {bitrateText.setText("[ "+"--"+"]");}
 
+	tkn = tokenizeSongInfo("Channels", SongInfoString);
+	channelDisplay.setXmlParam("image", "player.songinfo." + tkn);
 	tkn = tokenizeSongInfo("Frequency", SongInfoString);
-    freqint = System.Stringtointeger(tkn);
+	int freqint = System.Stringtointeger(tkn);
+	String freqstring = System.IntegerToString(freqint);
+	if(tkn != "") {frequencyText.setText("["+tkn+"]");}
+	if(freqint < 100) {frequencyText.setText("["+tkn+"]");}
+	if(freqint > 100) {FrequencyText.setXmlParam("x", "69");} else{FrequencyText.setXmlParam("x", "71");}
+	if(freqint < 10) {frequencyText.setText("[ "+tkn+"]");}
+	if(freqint == 0) {frequencyText.setText("["+"--"+"]");}
 }
