@@ -2665,21 +2665,21 @@
 </gammaset>
 
 <gammaset id="Very Expensive">
-  <gammagroup id="Backgrounds" value="407,407,407" gray="2" boost="0" />
-  <gammagroup id="Backgrounds2" value="0,0,0" gray="2" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,301" gray="2" boost="0" />
+  <gammagroup id="Backgrounds2" value="-231,-231,0" gray="2" boost="0" />
   <gammagroup id="Bolt" value="483,483,4096" gray="2" boost="0" />
-  <gammagroup id="Menubar" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Menubar" value="-302,-302,0" gray="2" boost="0" />
   <gammagroup id="MenubarText" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="Titlebar" value="-1419,-1419,0" gray="2" boost="0" />
-  <gammagroup id="TitlebarText" value="-1082,-1082,0" gray="2" boost="0" />
+  <gammagroup id="TitlebarText" value="-763,-763,0" gray="2" boost="0" />
   <gammagroup id="TitlebarElements" value="-869,-869,0" gray="2" boost="0" />
   <gammagroup id="TitlebarHover" value="0,0,762" gray="2" boost="0" />
   <gammagroup id="Text" value="-4096,-4096,-4096" gray="0" boost="0" />
   <gammagroup id="Text Inverse" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ButtonsHover" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Buttons2" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ButtonsHover2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="2" boost="0" />
+  <gammagroup id="ButtonsHover" value="0,0,0" gray="2" boost="0" />
+  <gammagroup id="Buttons2" value="0,0,0" gray="2" boost="0" />
+  <gammagroup id="ButtonsHover2" value="0,0,0" gray="2" boost="0" />
   <gammagroup id="ButtonGlow" value="483,483,4096" gray="2" boost="0" />
   <gammagroup id="ButtonsActive" value="483,483,4096" gray="2" boost="0" />
   <gammagroup id="ButtonStatus" value="483,483,4096" gray="2" boost="0" />
