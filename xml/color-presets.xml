@@ -2711,7 +2711,7 @@
   <gammagroup id="Backgrounds" value="-2309,-846,-3298" gray="0" boost="0" />
   <gammagroup id="Backgrounds2" value="-337,-586,-3024" gray="0" boost="0" />
   <gammagroup id="Bolt" value="0,3883,-4096" gray="0" boost="0" />
-  <gammagroup id="Menubar" value="-3511,-3576,-3641" gray="0" boost="0" />
+  <gammagroup id="Menubar" value="-3072,-3072,-3072" gray="1" boost="0" />
   <gammagroup id="MenubarText" value="2438,2243,2503" gray="2" boost="1" />
   <gammagroup id="Titlebar" value="-3089,-2731,-2926" gray="1" boost="0" />
   <gammagroup id="TitlebarText" value="0,0,0" gray="0" boost="0" />
@@ -2727,8 +2727,8 @@
   <gammagroup id="ButtonsActive" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="ButtonStatus" value="1105,292,-1788" gray="1" boost="0" />
   <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Scrollbar Buttons" value="0,0,-2764" gray="0" boost="0" />
-  <gammagroup id="Scrollbar Hover" value="-1268,-1138,-1106" gray="0" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,-2700" gray="0" boost="0" />
+  <gammagroup id="Scrollbar Hover" value="0,0,-2500" gray="0" boost="0" />
   <gammagroup id="Led" value="422,0,0" gray="0" boost="0" />
   <gammagroup id="Display" value="2600,1365,-2048" gray="0" boost="0" />
   <gammagroup id="DisplaySongtickerBG" value="-1528,-3739,-683" gray="0" boost="0" />
@@ -2744,8 +2744,8 @@
   <gammagroup id="TextDark" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="ListText" value="2568,2438,2438" gray="0" boost="0" />
   <gammagroup id="ListTextSelected" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ListTextCurrent" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="ListBackground" value="0,-3479,-3901" gray="0" boost="0" />
+  <gammagroup id="ListTextCurrent" value="256,256,256" gray="1" boost="0" />
+  <gammagroup id="ListBackground" value="-4096,-4096,-4096" gray="1" boost="0" />
   <gammagroup id="ListSelBackground" value="-716,-878,-3674" gray="0" boost="0" />
   <gammagroup id="ListColumnText" value="0,0,0" gray="0" boost="0" />
 </gammaset>
