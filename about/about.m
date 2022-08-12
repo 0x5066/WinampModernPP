@@ -436,10 +436,10 @@ getStr(int a, int b){
         return "EAK125, kiilu, matt_69, MdMa, Vicb, witmer777, Germ";
     }
     else if(((a == 11) && (b == 1))) {
-        return "Additional color themes by";
+        return "Additional color themes by Eris Lund, mirzi, ";
     }
     else if(((a == 11) && (b == 2))) {
-        return "Eris Lund, mirzi, RaducuF28 and Samey the Hedgie";
+        return "RaducuF28, Samey the Hedgie and dinnerbird";
     }
     else if(((a == 12) && (b == 1))) {
         return " ";
