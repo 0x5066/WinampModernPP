@@ -34,10 +34,6 @@ System.onScriptLoaded() {
   }
   right = sg.findObject(getToken(getParam(), ";", 2));
 
-  if(IsWine != NULL){
-    tcenter.setXmlParam("y", "3");
-  }
-
 }
 
 // backward compatibility with prerelease notify trick
