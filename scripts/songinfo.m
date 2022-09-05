@@ -7,7 +7,7 @@ Function loadPlaylistArtWork();
 Global Group frameGroup;
 Global Layer channelDisplay;
 Global Text bitrateText, FrequencyText;
-Global Timer songInfoTimer;
+//Global Timer songInfoTimer;
 Global String SongInfoString;
 Global AlbumArtLayer waaa;
 Global Int waaaRetries = 0;
@@ -20,15 +20,15 @@ System.onScriptLoaded(){
 
 	channelDisplay = frameGroup.findObject("channels");
 
-	songInfoTimer = new Timer;
-	songInfoTimer.setDelay(250);
+	//songInfoTimer = new Timer;
+	//songInfoTimer.setDelay(250);
 
 	if (getStatus() == STATUS_PLAYING) {
 		String sit = getSongInfoText();
 		waaaRetries = 0;
-		if (sit != "") getSonginfo(sit);
-		else songInfoTimer.setDelay(250); // goes to 250ms once info is available
-		songInfoTimer.start();
+		//if (sit != "") getSonginfo(sit);
+		//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+		//songInfoTimer.start();
 	} else if (getStatus() == STATUS_PAUSED) {
 		getSonginfo(getSongInfoText());
 	}
@@ -48,29 +48,29 @@ loadPlaylistArtWork()
 }
 
 System.onScriptUnloading(){
-	delete songInfoTimer;
+	//delete songInfoTimer;
 }
 
 System.onPlay(){
 	String sit = getSongInfoText();
 	waaaRetries = 0;
-	if (sit != "") getSonginfo(sit);
-	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
-	songInfoTimer.start();
+	//if (sit != "") getSonginfo(sit);
+	//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	//songInfoTimer.start();
 	getSonginfo(getSongInfoText());
 }
 
 System.onTitleChange(String newtitle){
 	String sit = getSongInfoText();
 	waaaRetries = 0;
-	if (sit != "") getSonginfo(sit);
-	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
-	songInfoTimer.start();
+	//if (sit != "") getSonginfo(sit);
+	//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	//songInfoTimer.start();
 }
 
 System.onStop(){
 	waaaRetries = 0;
-	songInfoTimer.stop();
+	//songInfoTimer.stop();
 	frequencyText.setText("(__)");
 	bitrateText.setText("(___)");
 	channelDisplay.setXmlParam("image", "player.songinfo.none");
@@ -78,19 +78,20 @@ System.onStop(){
 
 System.onResume(){
 	String sit = getSongInfoText();
-	if (sit != "") getSonginfo(sit);
-	else songInfoTimer.setDelay(250); // goes to 250ms once info is available
-	songInfoTimer.start();
+	//if (sit != "") getSonginfo(sit);
+	//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
+	//songInfoTimer.start();
 }
 
 System.onPause(){
-	songInfoTimer.stop();
+	//songInfoTimer.stop();
 }
 
-songInfoTimer.onTimer(){
+//used to be songInfoTimer.onTimer()
+System.onInfoChange(String info){
 	String sit = getSongInfoText();
-	if (sit == "") return;
-	songInfoTimer.setDelay(250);
+	//if (sit == "") return;
+	//songInfoTimer.setDelay(250);
 	getSonginfo(sit);
 
 	if(!waaa) loadPlaylistArtWork();
