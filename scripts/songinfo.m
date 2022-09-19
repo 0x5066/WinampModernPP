@@ -25,6 +25,7 @@ System.onScriptLoaded(){
 
 	if (getStatus() == STATUS_PLAYING) {
 		String sit = getSongInfoText();
+		getSonginfo(getSongInfoText());
 		waaaRetries = 0;
 		//if (sit != "") getSonginfo(sit);
 		//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
@@ -62,6 +63,14 @@ System.onPlay(){
 
 System.onTitleChange(String newtitle){
 	String sit = getSongInfoText();
+		if (sit == "")
+	{
+		getSonginfo(sit);
+		if(getStatus() == 1){
+			frequencyText.setText("[--]");
+			bitrateText.setText("[ --]");
+		}
+	}
 	waaaRetries = 0;
 	//if (sit != "") getSonginfo(sit);
 	//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
@@ -78,7 +87,7 @@ System.onStop(){
 
 System.onResume(){
 	String sit = getSongInfoText();
-	//if (sit != "") getSonginfo(sit);
+	if (sit != "") getSonginfo(sit);
 	//else songInfoTimer.setDelay(250); // goes to 250ms once info is available
 	//songInfoTimer.start();
 }
@@ -90,6 +99,14 @@ System.onPause(){
 //used to be songInfoTimer.onTimer()
 System.onInfoChange(String info){
 	String sit = getSongInfoText();
+	if (sit == "")
+	{
+		getSonginfo(sit);
+		if(getStatus() == 1){
+			frequencyText.setText("[--]");
+			bitrateText.setText("[ --]");
+		}
+	}
 	//if (sit == "") return;
 	//songInfoTimer.setDelay(250);
 	getSonginfo(sit);
@@ -184,4 +201,9 @@ getSonginfo(String SongInfoString) {
 	if(freqint > 100) {FrequencyText.setXmlParam("x", "69");} else{FrequencyText.setXmlParam("x", "71");}
 	if(freqint < 10) {frequencyText.setText("[ "+tkn+"]");}
 	if(freqint == 0) {frequencyText.setText("["+"--"+"]");}
+
+	if(getStatus() == 0){
+		frequencyText.setText("(__)");
+		bitrateText.setText("(___)");
+	}
 }
