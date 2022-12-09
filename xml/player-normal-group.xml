@@ -259,6 +259,10 @@
 </groupdef>
 
 
+  <groupdef id="padoru">
+    <Layer id="lpadoru" x="0" y="6" relatx="0" image="player.visualization.padoruanim0" alpha="128" visible="0"/>
+  </groupdef>
+
 <!-- DISPLAY -->
 <groupdef id="player.normal.display" name="Display" relatw="1" w="-49">
 
@@ -356,9 +360,11 @@
     pauseBitmap="player.status.pause"
   />
 
-  <layer id="playbackstatus" x="14" y="25" image="wa.play.green"/>
-
+  <layer id="playbackstatus" x="14" y="25" image="wa.play.green" ghost="1"/>
+  <layer id="playledmenu" x="14" y="17" w="10" h="23" rectrgn="1"/>
   <script file="../Winamp Modern/scripts/classicplaystatus.maki" />
+
+  <group id="padoru" x="-89" y="13" w="72" h="25" relatx="1"/>
 
   <!-- Visualization -->
   <layer
