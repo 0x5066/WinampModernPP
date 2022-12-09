@@ -431,6 +431,11 @@
   <bitmap id="player.visualization.overlay" file="../Winamp Modern/player/visualization_overlay.png" x="0" y="0" h="33" w="85" gammagroup="Display"/>
   <bitmap id="player.visualization.overlay.vu" file="../Winamp Modern/player/visualization_overlay_vu.png" x="0" y="0" h="33" w="85" gammagroup="Display"/>
   <bitmap id="player.visualization.overlay2" file="../Winamp Modern/player/visualization_overlay.png" x="1" y="0" h="33" w="85" gammagroup="Display"/>
+  <bitmap id="player.visualization.padoru" file="../Winamp Modern/player/padoru.png"/>
+  <bitmap id="player.visualization.padoruanim0" file="../Winamp Modern/player/padoruspin.png" x="0" y="0" h="19" w="17"/>
+  <bitmap id="player.visualization.padoruanim1" file="../Winamp Modern/player/padoruspin.png" x="0" y="19" h="19" w="17"/>
+  <bitmap id="player.visualization.padoruanim2" file="../Winamp Modern/player/padoruspin.png" x="0" y="38" h="19" w="17"/>
+  <bitmap id="player.visualization.padoruanim3" file="../Winamp Modern/player/padoruspin.png" x="0" y="57" h="19" w="17"/>
 
 <!-- SONGINFO -->
   <bitmap id="bitmapfont.player.songinfo" file="../Winamp Modern/player/songinfofont.png" x="0" y="0" h="23" w="124" gammagroup="DisplayElements"/>
