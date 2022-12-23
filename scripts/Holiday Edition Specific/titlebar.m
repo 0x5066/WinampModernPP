@@ -1,8 +1,8 @@
 #include "..\..\..\lib/std.mi"
-#include "..\..\..\lib\fileio.mi"
+//#include "..\..\..\lib\fileio.mi"
 #define MARGIN 0
 
-Global File Arial;
+//Global File Arial;
 
 Function resizeObjects();
 
@@ -15,9 +15,9 @@ Global int padleft, padright;
 Global Boolean IsWine;
 
 System.onScriptLoaded() {
-  Arial = new File;
-  Arial.load("Z:\\usr\\share\\fonts\\TTF\\arial.ttf");
-  Arial.exists();
+  //Arial = new File;
+  //Arial.load("Z:\\usr\\share\\fonts\\TTF\\arial.ttf");
+  //Arial.exists();
 
   IsWine = stringToInteger(getToken(getParam(), ";", 3));
 
@@ -43,11 +43,7 @@ System.onScriptLoaded() {
   holly_r = sg.findObject("player.main.xmasholly.r");
 
   if(IsWine != NULL){
-    if(Arial.exists() == 1){
-      //do nothing, because the font looks good already
-    }else{
-      tcenter.setXmlParam("y", "3");
-    }
+    tcenter.setXmlParam("y", "2");
   }
 }
 
