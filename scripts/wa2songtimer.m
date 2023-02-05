@@ -125,14 +125,19 @@ Clock.onTimer(){
         i++;
     }
 }
-
+//vector point of adding support for larger digits when pausing
 PauseBlinkPaused.onTimer(){ //Remainder
     if(i >= 1){
         StaticTimeRemainder();
     }else{
         timerSongTimer.stop();
-        DisplayTime.setXmlParam("text", "...:..");
-        DisplayTimeShade.setXmlParam("text", "   :  ");
+        if(remainder > 6000000){
+            DisplayTime.setXmlParam("text", "....:..");
+            DisplayTimeShade.setXmlParam("text", "    :  ");
+        }else{
+            DisplayTime.setXmlParam("text", "...:..");
+            DisplayTimeShade.setXmlParam("text", "   :  ");
+        }
     }
 }
 
@@ -141,11 +146,16 @@ PauseBlink.onTimer(){ //Elapsed
         StaticTime();
     }else{
         timerSongTimer.stop();
-        DisplayTime.setXmlParam("text", "..:..");
-        DisplayTimeShade.setXmlParam("text", "  :  ");
+        if(milliseconds > 6000000){
+            DisplayTime.setXmlParam("text", "...:..");
+            DisplayTimeShade.setXmlParam("text", "   :  ");
+        }else{
+            DisplayTime.setXmlParam("text", "..:..");
+            DisplayTimeShade.setXmlParam("text", "  :  ");
+        }
     }
 }
-
+//ends here
 TimerTrigger.onRightButtonUp (int x, int y){
     int timermode = getPrivateInt(getSkinName(), "TimerElapsedRemaining", 1);
 
