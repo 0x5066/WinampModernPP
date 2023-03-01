@@ -6,11 +6,16 @@
 #include "songinfo_new.m"
 
 //Global Group player;
-Global layer playstatus;
+Global PopUpMenu pMenu;
+Global layer playstatus, POptions;
 Global timer setPlaysymbol;
+
+Global Boolean WA5MODE;
 
 Function setState();
 Function setState2();
+Function loadSettingsAndDefaults();
+Function ProcessMenuResult (int a);
 
 System.onScriptLoaded(){
 
@@ -18,6 +23,7 @@ System.onScriptLoaded(){
 
     Group player = getScriptGroup();
     playstatus = player.findObject("playbackstatus");
+    POptions = player.findObject("playledmenu");
 
     setPlaysymbol = new Timer;
 	setPlaysymbol.setDelay(16); 
@@ -32,6 +38,29 @@ System.onScriptLoaded(){
         playstatus.setXmlParam("alpha", "0");
         playstatus.setXmlParam("image", "wa.play.green");
     }
+    loadSettingsAndDefaults();
+}
+
+loadSettingsAndDefaults(){
+    WA5MODE = getPrivateInt(getSkinName(), "Winamp 5.x LED Behavior", 1);
+}
+
+POptions.onRightButtonDown (int x, int y)
+{
+    pMenu = new PopUpMenu;
+	pMenu.addCommand("Winamp 5.x mode", 101, WA5MODE == 1, 0);
+    ProcessMenuResult (PMenu.popAtMouse());
+}
+
+ProcessMenuResult (int a)
+{
+	if (a < 1) return;
+
+	else if (a == 101)
+	{
+		WA5MODE = (WA5MODE - 1) * (-1);
+		setPrivateInt(getSkinName(), "Winamp 5.x LED Behavior", WA5MODE);
+	}
 }
 
 System.onScriptUnloading(){
@@ -181,13 +210,22 @@ setState(){
 }
 
 setState2(){
-    if(getPosition() < getPlayItemLength()-1093){ //1093 was eyeballed
-        playstatus.setXmlParam("image", "wa.play.green");
-        setState();
-    }else if(getPlayItemLength() <= 0){
-        playstatus.setXmlParam("image", "wa.play.green");
-        setState();
+    if(!WA5MODE){
+        if(getPosition() < getPlayItemLength()-1093){ //1093 was eyeballed
+            playstatus.setXmlParam("image", "wa.play.green");
+            setState();
+        }else if(getPlayItemLength() <= 0){
+            playstatus.setXmlParam("image", "wa.play.green");
+            setState();
+        }else{
+            playstatus.setXmlParam("image", "wa.play.red"); //only ever occurs if the above conditions passed
+        }
     }else{
-        playstatus.setXmlParam("image", "wa.play.red"); //only ever occurs if the above conditions passed
+        if(getPlayItemLength() <= 0 && bitrateint == 0 || bitrateint == -1 && freqint == 0 || freqint == -1){
+            playstatus.setXmlParam("image", "wa.play.red"); //has to appear first, i think i'm getting the logic wrong...
+        }else{
+            playstatus.setXmlParam("image", "wa.play.green");
+            setState();
+        }
     }
 }

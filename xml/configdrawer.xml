@@ -617,7 +617,7 @@
      image="drawer.options.drawers.text"
    />
   <togglebutton
-    cfgattrib="{C338B30F-2A04-4b10-871F-4E9D52D62806};Animate Video/Vis Drawer (disabled if opacity = 100%)"
+    cfgattrib="{C338B30F-2A04-4b10-871F-4E9D52D62806};Animate Video/Vis Drawer (disabled if opacity %3C 100%%)"
     x="10" y="2"
     image="drawer.options.checkbox.w181.off"
     hoverImage="drawer.options.checkbox.w181.hover"
