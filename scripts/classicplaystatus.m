@@ -10,7 +10,7 @@ Global PopUpMenu pMenu;
 Global layer playstatus, POptions;
 Global timer setPlaysymbol;
 
-Global Boolean WA5MODE;
+Global Boolean WA5MODE, playLED;
 
 Function setState();
 Function setState2();
@@ -43,12 +43,16 @@ System.onScriptLoaded(){
 
 loadSettingsAndDefaults(){
     WA5MODE = getPrivateInt(getSkinName(), "Winamp 5.x LED Behavior", 1);
+    playLED = getPrivateInt(getSkinName(), "Winamp 5.x LED Visibility", 1);
 }
 
 POptions.onRightButtonDown (int x, int y)
 {
     pMenu = new PopUpMenu;
+    pMenu.addCommand("Classic Play Status", 999, 0, 1);
+    pMenu.addSeparator();
 	pMenu.addCommand("Winamp 5.x mode", 101, WA5MODE == 1, 0);
+    pMenu.addCommand("Show LED", 102, playLED == 1, 0);
     ProcessMenuResult (PMenu.popAtMouse());
 }
 
@@ -60,6 +64,12 @@ ProcessMenuResult (int a)
 	{
 		WA5MODE = (WA5MODE - 1) * (-1);
 		setPrivateInt(getSkinName(), "Winamp 5.x LED Behavior", WA5MODE);
+	}
+    else if (a == 102)
+	{
+		playLED = (playLED - 1) * (-1);
+        playstatus.setXmlParam("visible", integerToString(playLED));
+		setPrivateInt(getSkinName(), "Winamp 5.x LED Visibility", playLED);
 	}
 }
 
