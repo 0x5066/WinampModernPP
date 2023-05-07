@@ -2,10 +2,6 @@
 #include "attribs.m"
 
 Function setObjects();
-Function refreshVisSettings();
-Function ProcessMenuResult(int a);
-Function unsmooth();
-Function smooth();
 
 Global PopUpMenu visMenu;
 
@@ -40,13 +36,6 @@ System.onScriptLoaded() {
 
   refreshEQ = new Timer;
   refreshEQ.setDelay(10);
-
-  refreshVisSettings();
-}
-
-refreshVisSettings ()
-{
-	vu_smooth = getPrivateInt(getSkinName(), "Smooth VU Meters", 1);
 }
 
 System.onscriptunloading() {
@@ -110,59 +99,12 @@ Toggler.onLeftClick() {
 	}
 }
 
-Toggler.onRightButtonUp (int x, int y)
-{
-	visMenu = new PopUpMenu;
-
-	visMenu.addCommand("VU Smoothing", 101, vu_smooth == 1, 0);
-
-	ProcessMenuResult (visMenu.popAtMouse());
-
-	delete visMenu;
-
-	complete;	
-}
-
-ProcessMenuResult (int a)
-{
-	if (a < 1) return;
-
-	if (a > 0 && a <= 6 || a == 100)
-	{
-		if (a == 100) a = 0;
-	}
-
-	else if (a == 101)
-	{
-		vu_smooth = (vu_smooth - 1) * (-1);
-		setPrivateInt(getSkinName(), "Smooth VU Meters", vu_smooth);
-	}
-}
-
 refreshEQ.onTimer() {
-//credit to Egor Petrov/E-Trance for the original piece of code used in his EPS3 skin
-//modified to remove the signal being made logarithmic, making it linear, removed the smoothing as well
-	if(vu_smooth == 0){
-		unsmooth();
-	}else{
-		smooth();
-	}
+	level1 = (getLeftVuMeter()*beatbarleft.getLength()/256);
+	level2 = (getRightVuMeter()*beatbarright.getLength()/256);
 
     beatbarleft.gotoFrame(level1);
     beatbarright.gotoFrame(level2);
-}
-
-unsmooth(){
-	level1 = (getLeftVuMeter()*beatbarleft.getLength()/256);
-	level2 = (getRightVuMeter()*beatbarright.getLength()/256);
-}
-
-smooth(){
-	float DivL1 = 1.75;
-	float DivR1 = DivL1;
-
-	level1 += ((getLeftVuMeter()*beatbarleft.getLength()/256)/DivL1 - Level1 / DivL1);
-	level2 += ((getRightVuMeter()*beatbarright.getLength()/256)/DivR1 - level2 / DivR1);
 }
 
 Toggler2.onActivate(boolean on) {
